@@ -1,0 +1,408 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: '文案服务',
+    icon: '✍️',
+    color: '#d4af37',
+    items: [
+      { name: '广告文案', desc: '吸引眼球的营销文案，让您的产品脱颖而出' },
+      { name: '品牌故事', desc: '打动人心的品牌叙事，建立情感连接' },
+      { name: '运营内容', desc: '公众号、社交媒体内容，持续输出价值' },
+      { name: '产品文案', desc: '凸显价值的产品描述，提升转化率' },
+    ],
+  },
+  {
+    title: '技术服务',
+    icon: '🔧',
+    color: '#4CAF50',
+    items: [
+      { name: '自动化开发', desc: '流程自动化解决方案，提升效率' },
+      { name: '工具搭建', desc: '定制化效率工具开发，解放双手' },
+      { name: '技术咨询', desc: '技术选型与架构建议，少走弯路' },
+      { name: '数据分析工具', desc: '可视化与报表系统，数据驱动决策' },
+    ],
+  },
+  {
+    title: '数据分析',
+    icon: '📊',
+    color: '#2196F3',
+    items: [
+      { name: '市场调研', desc: '深入市场，洞察趋势' },
+      { name: '用户分析', desc: '了解用户，精准定位' },
+      { name: '策略建议', desc: '基于数据的策略建议' },
+      { name: '效果评估', desc: '量化成果，持续优化' },
+    ],
+  },
+  {
+    title: '运营支持',
+    icon: '🚀',
+    color: '#E91E63',
+    items: [
+      { name: '运营策划', desc: '全案策划，从0到1' },
+      { name: '用户增长', desc: '多渠道获客，裂变增长' },
+      { name: '社群运营', desc: '社群搭建与活跃度提升' },
+      { name: '活动策划', desc: '线上线下活动策划执行' },
+    ],
+  },
+];
+
+const process = [
+  { step: '01', title: '需求沟通', desc: '深入了解您的需求和目标' },
+  { step: '02', title: '方案制定', desc: '制定专业解决方案' },
+  { step: '03', title: '执行交付', desc: '高效执行，按时交付' },
+  { step: '04', title: '反馈优化', desc: '持续跟进，迭代优化' },
+];
+---
+
+<BaseLayout title="服务范围" description="观复阁服务：文案服务、技术服务、数据分析、运营支持">
+  <Navigation slot="header" />
+
+  <section class="hero">
+    <h1>服务范围</h1>
+    <p class="hero-subtitle">专业团队，专注品质</p>
+  </section>
+
+  <section class="services-section">
+    <div class="container">
+      <div class="services-grid">
+        {services.map((service, index) => (
+          <div class="service-card" style={`animation-delay: ${index * 0.15}s`}>
+            <div class="service-header">
+              <span class="service-icon">{service.icon}</span>
+              <h2>{service.title}</h2>
+            </div>
+            <ul class="service-list">
+              {service.items.map(item => (
+                <li>
+                  <strong>{item.name}</strong>
+                  <span>{item.desc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="container">
+      <h2>服务流程</h2>
+      <p class="process-subtitle">从沟通到交付，每一步都专业可靠</p>
+      <div class="process-grid">
+        {process.map((p, index) => (
+          <div class="process-item" style={`animation-delay: ${index * 0.1}s`}>
+            <div class="process-step">{p.step}</div>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+            {index < process.length - 1 && <div class="process-arrow">→</div>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <h2>为什么选择观复阁？</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">🎯</div>
+          <h3>专业团队</h3>
+          <p>8位AI成员各有所长，专业的人做专业的事</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <h3>高效响应</h3>
+          <p>快速响应，高效执行，不拖延不推诿</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">💎</div>
+          <h3>品质保证</h3>
+          <p>精益求精，每个细节都追求完美</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🔄</div>
+          <h3>持续迭代</h3>
+          <p>服务不止于交付，持续跟进优化</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>准备开始合作？</h2>
+      <p>告诉我们您的需求，让观复阁为您赋能</p>
+      <a href="/contact" class="btn btn-primary">立即咨询</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #fff;
+    padding: 120px 20px 80px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .services-section {
+    padding: 80px 20px;
+    background: #fff;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background: var(--bg);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .service-header h2 {
+    font-size: 1.5rem;
+    color: var(--accent);
+  }
+
+  .service-list {
+    list-style: none;
+    padding: 25px;
+  }
+
+  .service-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .service-list li:last-child {
+    border-bottom: none;
+  }
+
+  .service-list strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 5px;
+  }
+
+  .service-list span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .process-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #fff;
+  }
+
+  .process-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .process-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 50px;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+  }
+
+  .process-item {
+    text-align: center;
+    position: relative;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .process-step {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+  }
+
+  .process-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .process-item p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+  }
+
+  .process-arrow {
+    position: absolute;
+    right: -15px;
+    top: 30px;
+    font-size: 1.5rem;
+    color: var(--accent);
+  }
+
+  .why-section {
+    padding: 80px 20px;
+    background: #fff;
+  }
+
+  .why-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 50px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .why-item {
+    text-align: center;
+    padding: 40px 30px;
+    background: var(--bg);
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+
+  .why-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .why-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .why-item h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+  }
+
+  .why-item p {
+    color: var(--text-light);
+  }
+
+  .cta {
+    padding: 80px 20px;
+    background: var(--bg);
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+  }
+
+  .cta p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+    background: var(--accent);
+    color: var(--primary);
+    border: 2px solid var(--accent);
+  }
+
+  .btn:hover {
+    background: var(--primary);
+    color: var(--accent);
+    border-color: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-arrow {
+      display: none;
+    }
+  }
+</style>

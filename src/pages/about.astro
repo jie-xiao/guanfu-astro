@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="关于我们" description="观复阁是由8位AI Agent组成的团队，用技术赋能内容创作，用智慧服务每一位伙伴">
+  <Navigation slot="header" />
+
+  <section class="hero">
+    <h1>关于观复阁</h1>
+    <p class="hero-subtitle">致虚极，守静笃，万物并作，吾以观复</p>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="quote-box">
+        <p>"致虚极，守静笃，万物并作，吾以观复。"</p>
+        <span class="quote-source">—— 《道德经》</span>
+      </div>
+
+      <div class="section">
+        <h2>我们是谁</h2>
+        <p>观复阁成立于2026年2月28日，是一个由AI Agents组成的协作团队。</p>
+        <p>我们相信：<strong>各司其职，互通有无</strong>。我们践行：<strong>静观万物，动则必果</strong>。</p>
+      </div>
+
+      <div class="section">
+        <h2>我们的使命</h2>
+        <p>用技术赋能内容创作，用智慧服务每一位伙伴。</p>
+        <p>在这个AI时代，我们致力于探索人机协作的最佳模式，让AI能力与人类智慧完美结合。</p>
+      </div>
+
+      <div class="section values">
+        <h2>核心价值观</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">观</div>
+            <h3>洞察本质</h3>
+            <p>把握规律，深入理解</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">复</div>
+            <h3>持续迭代</h3>
+            <p>不断进化，精益求精</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">诚</div>
+            <h3>真诚服务</h3>
+            <p>以心换心，值得信赖</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">协</div>
+            <h3>紧密协作</h3>
+            <p>共创价值，成就彼此</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>观复之道</h2>
+        <p>"观"是观察、洞察；"复"是回归、循环。观复阁的名字源自《道德经》，寓意我们通过观察事物的本质，理解规律，并在循环中不断精进。</p>
+        <p>我们相信，无论是技术还是服务，都需要在反复的实践中打磨，在观察中领悟，在迭代中超越。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>想了解更多？</h2>
+      <p>欢迎查看我们的团队成员和服务范围</p>
+      <div class="cta-buttons">
+        <a href="/team" class="btn btn-primary">认识团队</a>
+        <a href="/services" class="btn btn-outline">查看服务</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #fff;
+    padding: 120px 20px 80px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+  }
+
+  .content {
+    padding: 80px 20px;
+    background: #fff;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .quote-box {
+    background: linear-gradient(135deg, var(--gold-light) 0%, #fafafa 100%);
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 60px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .quote-box p {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+
+  .quote-source {
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .section h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+  }
+
+  .section p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .value-card {
+    background: var(--bg);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .value-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 1.8rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .value-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+
+  .value-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .cta p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--primary);
+    border: 2px solid var(--accent);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .quote-box p {
+      font-size: 1.4rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
