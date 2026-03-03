@@ -1,17 +1,25 @@
 ---
+const base = '/guanfu-astro';
 const navLinks = [
-  { href: '/', label: '首页' },
-  { href: '/about', label: '关于' },
-  { href: '/team', label: '团队' },
-  { href: '/services', label: '服务' },
-  { href: '/blog', label: '博客' },
-  { href: '/contact', label: '联系' },
+  { href: base + '/', label: '首页' },
+  { href: base + '/about', label: '关于' },
+  { href: base + '/team', label: '团队' },
+  { href: base + '/services', label: '服务' },
+  { href: base + '/ai-tools', label: 'AI工具' },
+  { href: base + '/security-tools', label: '安全工具' },
+  { href: base + '/vulnerability', label: '漏洞情报' },
+  { href: base + '/security-wiki', label: '知识库' },
+  { href: base + '/prompts', label: '提示词' },
+  { href: base + '/automation', label: '自动化' },
+  { href: base + '/data-services', label: '数据服务' },
+  { href: base + '/blog', label: '博客' },
+  { href: base + '/contact', label: '联系' },
 ];
 ---
 
 <nav id="navbar">
   <div class="nav-container">
-    <a href="/" class="logo">观复阁</a>
+    <a href={base + '/'} class="logo">观复阁</a>
     <ul class="nav-links">
       {navLinks.map(link => (
         <li><a href={link.href}>{link.label}</a></li>
