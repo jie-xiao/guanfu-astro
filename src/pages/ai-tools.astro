@@ -5,11 +5,382 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="AI工具导航 - 观复阁">
   <div class="hero">
     <h1>🤖 AI工具导航</h1>
-    <p>收录各类AI工具</p>
+    <p>收录各类AI工具，分类清晰，快速查找，定期更新</p>
+    <p style="margin-top:1rem;font-size:0.9rem;opacity:0.7">收录50+款AI工具，包含对话、图像、视频、音频、编程等领域</p>
+  </div>
+
+  <div class="content">
+    <section class="tools-section">
+      <h2>📝 AI对话</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>ChatGPT</h3>
+          <p>OpenAI推出的对话AI，GPT-4模型能力强大，支持多模态</p>
+          <span class="tag">对话</span>
+          <a href="https://chat.openai.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Claude</h3>
+          <p>Anthropic推出的AI助手，长文本处理能力强，编程能力突出</p>
+          <span class="tag">对话</span>
+          <a href="https://claude.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>DeepSeek</h3>
+          <p>国产开源大模型，性能对标GPT-4，免费使用</p>
+          <span class="tag">对话</span>
+          <a href="https://www.deepseek.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>文心一言</h3>
+          <p>百度推出的生成式AI产品，中文理解能力强</p>
+          <span class="tag">对话</span>
+          <a href="https://yiyan.baidu.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Kimi</h3>
+          <p>月之暗面推出的AI助手，超长上下文，支持200万字</p>
+          <span class="tag">对话</span>
+          <a href="https://kimi.moonshot.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>通义千问</h3>
+          <p>阿里巴巴推出的AI助手，开源版本Qwen性能优秀</p>
+          <span class="tag">对话</span>
+          <a href="https://tongyi.aliyun.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>讯飞星火</h3>
+          <p>科大讯飞推出的认知大模型，语音能力突出</p>
+          <span class="tag">对话</span>
+          <a href="https://xinghuo.xfyun.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>智谱清言</h3>
+          <p>智谱AI推出的对话助手，基于ChatGLM</p>
+          <span class="tag">对话</span>
+          <a href="https://www.zhipuai.cn" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>🖼️ 图像生成</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Midjourney</h3>
+          <p>AI图像生成工具，艺术风格强大，适合创意设计</p>
+          <span class="tag">图像</span>
+          <a href="https://www.midjourney.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Stable Diffusion</h3>
+          <p>开源AI图像生成模型，本地可部署</p>
+          <span class="tag">图像</span>
+          <a href="https://stability.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>DALL-E 3</h3>
+          <p>OpenAI图像生成模型，与ChatGPT集成</p>
+          <span class="tag">图像</span>
+          <a href="https://openai.com/dall-e-3" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>通义万相</h3>
+          <p>阿里巴巴图像生成工具，中文提示词优化</p>
+          <span class="tag">图像</span>
+          <a href="https://tongyi.aliyun.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>LiblibAI</h3>
+          <p>国产AI图像生成平台，SD模型社区</p>
+          <span class="tag">图像</span>
+          <a href="https://www.liblib.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>文心一格</h3>
+          <p>百度AI绘画工具，易上手</p>
+          <span class="tag">图像</span>
+          <a href="https://yige.baidu.com" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>💻 代码助手</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>GitHub Copilot</h3>
+          <p>AI代码补全工具，实时建议，多语言支持</p>
+          <span class="tag">编程</span>
+          <a href="https://github.com/features/copilot" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Cursor</h3>
+          <p>AI驱动的代码编辑器，集成GPT-4</p>
+          <span class="tag">编程</span>
+          <a href="https://cursor.sh" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Codeium</h3>
+          <p>免费AI代码助手，支持70+语言</p>
+          <span class="tag">编程</span>
+          <a href="https://codeium.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>通义灵码</h3>
+          <p>阿里云AI编程助手，免费使用</p>
+          <span class="tag">编程</span>
+          <a href="https://tongyi.aliyun.com/lingma" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Windsurf</h3>
+          <p>新一代AI代码编辑器，Flow状态感知</p>
+          <span class="tag">编程</span>
+          <a href="https://codeium.com/windsurf" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Trae</h3>
+          <p>字节跳动AI编程助手，中文优化</p>
+          <span class="tag">编程</span>
+          <a href="https://www.trae.ai" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>🎬 视频生成</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Sora</h3>
+          <p>OpenAI视频生成模型，文字转视频</p>
+          <span class="tag">视频</span>
+          <a href="https://openai.com/sora" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Runway</h3>
+          <p>AI视频生成和编辑平台，功能丰富</p>
+          <span class="tag">视频</span>
+          <a href="https://runwayml.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Pika</h3>
+          <p>AI视频生成工具，快速生成</p>
+          <span class="tag">视频</span>
+          <a href="https://pika.art" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>可灵AI</h3>
+          <p>快手AI视频生成，国际版可用</p>
+          <span class="tag">视频</span>
+          <a href="https://klingai.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>即梦AI</h3>
+          <p>字节跳动AI工具集，图片转视频</p>
+          <span class="tag">视频</span>
+          <a href="https://jimeng.jianying.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>海螺AI</h3>
+          <p>MiniMax视频生成，国产选择</p>
+          <span class="tag">视频</span>
+          <a href="https://hailuoai.com" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>🎵 音频处理</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>ElevenLabs</h3>
+          <p>AI语音合成平台，声音克隆技术领先</p>
+          <span class="tag">音频</span>
+          <a href="https://elevenlabs.io" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Murf AI</h3>
+          <p>AI人声合成工具，商用级质量</p>
+          <span class="tag">音频</span>
+          <a href="https://murf.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>剪映</h3>
+          <p>字节跳动视频编辑工具，AI功能丰富</p>
+          <span class="tag">音频</span>
+          <a href="https://capcut.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>网易天音</h3>
+          <p>网易AI音乐创作工具，一键生成</p>
+          <span class="tag">音频</span>
+          <a href="https://tianyin.163.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>讯飞智作</h3>
+          <p>科大讯飞AI语音合成，国产优选</p>
+          <span class="tag">音频</span>
+          <a href="https://zhiyi.xfyun.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Suno</h3>
+          <p>AI音乐生成工具，词曲全包</p>
+          <span class="tag">音频</span>
+          <a href="https://suno.ai" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>🔍 AI搜索</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Perplexity</h3>
+          <p>AI搜索引擎，实时联网，回答有来源</p>
+          <span class="tag">搜索</span>
+          <a href="https://www.perplexity.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Arc Search</h3>
+          <p>浏览器AI搜索，智能摘要</p>
+          <span class="tag">搜索</span>
+          <a href="https://arc.net" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>秘塔AI搜索</h3>
+          <p>国产AI搜索，无广告</p>
+          <span class="tag">搜索</span>
+          <a href="https://metaso.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>360AI搜索</h3>
+          <p>360集团AI搜索</p>
+          <span class="tag">搜索</span>
+          <a href="https://ai.360.cn" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>📊 AI办公</h2>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Gamma</h3>
+          <p>AI生成PPT，一键生成演示文稿</p>
+          <span class="tag">办公</span>
+          <a href="https://gamma.app" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Tome</h3>
+          <p>AI storytelling PPT生成</p>
+          <span class="tag">办公</span>
+          <a href="https://tome.app" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Beautiful.ai</h3>
+          <p>智能PPT设计工具</p>
+          <span class="tag">办公</span>
+          <a href="https://www.beautiful.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Notion AI</h3>
+          <p>笔记AI辅助，智能写作</p>
+          <span class="tag">办公</span>
+          <a href="https://notion.so" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>WPS AI</h3>
+          <p>金山WPS AI助手</p>
+          <span class="tag">办公</span>
+          <a href="https://ai.wps.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>通义文档</h3>
+          <p>阿里AI文档处理</p>
+          <span class="tag">办公</span>
+          <a href="https://dafuwen.aliyun.com" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
   </div>
 </BaseLayout>
 
 <style>
-  .hero { text-align: center; padding: 4rem; background: linear-gradient(135deg, #1a1a2e, #16213e); }
-  .hero h1 { color: #d4af37; font-size: 2.5rem; }
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+  }
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .tools-section {
+    margin-bottom: 3rem;
+  }
+  .tools-section h2 {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  }
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .tool-card {
+    background: rgba(26, 26, 46, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  .tool-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+  }
+  .tool-card h3 {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+  }
+  .tool-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .tag {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+
+  .link {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: #4a9eff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+  }
+
+  .link:hover {
+    color: #70b8ff;
+  }
 </style>
