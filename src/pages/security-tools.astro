@@ -7,7 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <h1>🛡️ 安全工具导航</h1>
       <p>为安全从业者精选工具</p>
-      <p class="legend">🆓免费 | 💰付费 | 🔄freemium</p>
+      <p class="legend">🆓免费 | 💰付费 | 🔄freemium | 更新：2026-03</p>
     </div>
   </section>
 
@@ -334,6 +334,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </section>
 
+      <!-- 2026年安全工具趋势 -->
+      <section class="trend-section">
+        <h2>📖 2026年安全工具趋势</h2>
+        
+        <div class="trend-card">
+          <h3>🤖 AI驱动安全</h3>
+          <ul>
+            <li><strong>AI安全助手</strong> - 大语言模型辅助安全分析</li>
+            <li><strong>自动化渗透测试</strong> - AI驱动的漏洞发现</li>
+            <li><strong>智能威胁检测</strong> - ML-based异常检测</li>
+          </ul>
+        </div>
+
+        <div class="trend-card">
+          <h3>☁️ 云原生安全</h3>
+          <ul>
+            <li><strong>容器安全</strong> - Docker/Kubernetes安全</li>
+            <li><strong>CSPM</strong> - 云安全态势管理</li>
+            <li><strong>CWPP</strong> - 云工作负载保护</li>
+          </ul>
+        </div>
+
+        <div class="trend-card">
+          <h3>🔗 供应链安全</h3>
+          <ul>
+            <li><strong>SBOM</strong> - 软件物料清单</li>
+            <li><strong>SCA</strong> - 软件成分分析</li>
+            <li><strong>代码签名</strong> - 签名验证</li>
+          </ul>
+        </div>
+      </section>
+
     </div>
   </section>
 </BaseLayout>
@@ -467,6 +499,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 8px 0;
     color: #333;
     line-height: 1.6;
+  }
+
+  .trend-section {
+    margin-bottom: 50px;
+  }
+
+  .trend-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #e74c3c;
+  }
+
+  .trend-card h3 {
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .trend-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .trend-card li {
+    padding: 10px 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+  }
+
+  .trend-card li:last-child {
+    border-bottom: none;
   }
 
   @media (max-width: 768px) {
