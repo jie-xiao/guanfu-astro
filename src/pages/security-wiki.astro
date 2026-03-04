@@ -83,6 +83,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </section>
 
+      <!-- CVE/CNNVD案例分析 -->
+      <section class="case-section">
+        <h2>📋 CVE漏洞案例分析</h2>
+        
+        <div class="cve-card critical">
+          <h3>CVE-2024-27198 - TeamCity认证绕过</h3>
+          <div class="cve-detail">
+            <p><strong>漏洞类型：</strong>认证绕过</p>
+            <p><strong>影响版本：</strong>TeamCity < 2023.11.4</p>
+            <p><strong>危害等级：</strong>🔴 Critical</p>
+            <p><strong>漏洞描述：</strong>允许未认证用户执行管理员操作</p>
+            <p><strong>利用条件：</strong>无需认证，直接构造请求</p>
+            <p><strong>修复建议：</strong>升级到最新版本</p>
+          </div>
+        </div>
+
+        <div class="cve-card high">
+          <h3>CVE-2024-23897 - Jenkins任意文件读取</h3>
+          <div class="cve-detail">
+            <p><strong>漏洞类型：</strong>任意文件读取</p>
+            <p><strong>影响版本：</strong>Jenkins < 2.442</p>
+            <p><strong>危害等级：</strong>🟠 High</p>
+            <p><strong>漏洞描述：</strong>允许攻击者读取任意文件</p>
+            <p><strong>利用条件：</strong>需要低权限用户</p>
+            <p><strong>修复建议：</strong>升级到最新LTS版本</p>
+          </div>
+        </div>
+
+        <div class="cve-card high">
+          <h3>CVE-2023-44487 - HTTP/2 Rapid Reset DoS</h3>
+          <div class="cve-detail">
+            <p><strong>漏洞类型：</strong>拒绝服务</p>
+            <p><strong>影响版本：</strong>支持HTTP/2的服务器</p>
+            <p><strong>危害等级：</strong>🟠 High</p>
+            <p><strong>漏洞描述：</strong>利用HTTP/2协议特性发起DDoS攻击</p>
+            <p><strong>利用条件：</strong>无需认证</p>
+            <p><strong>修复建议：</strong>更新HTTP/2库到最新版本</p>
+          </div>
+        </div>
+      </section>
+
       <!-- 漏洞搜索入口 -->
       <section class="search-section">
         <h2>🔍 漏洞搜索入口</h2>
@@ -230,6 +271,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .case-card h3 {
     color: #1a1a2e;
     margin-bottom: 20px;
+  }
+
+  /* CVE 案例卡片 */
+  .cve-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .cve-card.critical {
+    border-left: 5px solid #e74c3c;
+  }
+
+  .cve-card.high {
+    border-left: 5px solid #e67e22;
+  }
+
+  .cve-card h3 {
+    color: #1a1a2e;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .cve-detail p {
+    margin: 8px 0;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .cve-detail strong {
+    color: #1a1a2e;
+    margin-right: 8px;
   }
 
   .cve-list {
