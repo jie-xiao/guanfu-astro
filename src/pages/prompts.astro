@@ -278,6 +278,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
+      <!-- 资源集合 -->
+      <div class="section" id="resources">
+        <h2>📚 提示词资源</h2>
+        
+        <div class="card">
+          <h3>官方文档</h3>
+          <ul class="resource-list">
+            <li><strong>OpenAI 提示词指南</strong></li>
+            <li><strong>Anthropic 提示工程</strong></li>
+            <li><strong>Google 提示词课程</strong></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>工具推荐</h3>
+          <ul class="resource-list">
+            <li><strong>PromptBase</strong> - 提示词市场</li>
+            <li><strong>AIPRM</strong> - 浏览器插件</li>
+            <li><strong>PromptPerfect</strong> - 自动优化</li>
+            <li><strong>FlowGPT</strong> - 社区分享</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section" id="faq">
+        <h2>❓ 常见问题FAQ</h2>
+        
+        <div class="card">
+          <h3>Q1：什么是提示词？</h3>
+          <p>提示词（Prompt）是你给AI的指令。好的提示词能帮助AI更准确理解你的需求。</p>
+        </div>
+
+        <div class="card">
+          <h3>Q2：提示词越长越好吗？</h3>
+          <p>不是越长越好，而是越清晰越好。</p>
+        </div>
+
+        <div class="card">
+          <h3>Q3：为什么AI输出不符合预期？</h3>
+          <p>常见原因：需求描述不够清晰、缺少上下文、格式要求不明确。</p>
+        </div>
+      </div>
+
       <div class="contribute">
         <h3>📝 贡献案例</h3>
         <p>如果你有好的提示词案例，欢迎提交分享！</p>
@@ -381,6 +425,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .checklist { list-style: none; padding: 0; }
   .checklist li { padding: 8px 0; border-bottom: 1px solid #eee; }
   .checklist li:before { content: "✓ "; color: #27ae60; }
+
+  .resource-list { list-style: none; padding: 0; }
+  .resource-list li { padding: 8px 0; border-bottom: 1px solid #eee; }
+  .resource-list li:last-child { border-bottom: none; }
 
   .contribute {
     text-align: center;
