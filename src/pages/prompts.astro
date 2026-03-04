@@ -5,16 +5,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="提示词库 - 观复阁" description="观复阁提示词库 - 模板、案例、技巧、避坑指南">
   <section class="hero">
     <div class="container">
-      <h1>👥 提示词库</h1>
+      <h1>💬 提示词库</h1>
       <p>优质提示词模板 · 实用案例 · 高级技巧 · 避坑指南</p>
+      <p class="subtitle">从入门到进阶，从技巧到实战——这里有你需要的一切！</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container">
       
+      <!-- 快速导航 -->
+      <div class="quick-nav">
+        <h2>📚 快速导航</h2>
+        <div class="nav-grid">
+          <a href="#templates" class="nav-card">📝 写作辅助</a>
+          <a href="#templates" class="nav-card">💻 代码开发</a>
+          <a href="#templates" class="nav-card">📊 数据分析</a>
+          <a href="#templates" class="nav-card">💡 创意生成</a>
+          <a href="#templates" class="nav-card">📚 教育学习</a>
+          <a href="#templates" class="nav-card">🎧 客服支持</a>
+        </div>
+      </div>
+
+      <!-- 进阶内容 -->
+      <div class="advanced-nav">
+        <h2>🚀 进阶内容</h2>
+        <div class="nav-tags">
+          <a href="#examples" class="tag">📖 使用案例</a>
+          <a href="#templates" class="tag">📋 提示词模板</a>
+          <a href="#advanced" class="tag">🛠️ 高级技巧</a>
+          <a href="#benchmark" class="tag">⚖️ 评测对比</a>
+          <a href="#pitfall" class="tag">⚠️ 避坑指南</a>
+          <a href="#scenarios" class="tag">🎬 场景案例库</a>
+          <a href="#resources" class="tag">📚 资源集合</a>
+          <a href="#faq" class="tag">❓ 常见问题</a>
+          <a href="#map" class="tag">🗺️ 能力地图</a>
+          <a href="#best-practice" class="tag">✨ 最佳实践</a>
+        </div>
+      </div>
+
+      <!-- 为什么需要提示词 -->
+      <div class="why-section">
+        <h2>💡 为什么需要提示词？</h2>
+        <ul class="why-list">
+          <li>🎯 <strong>提升效率</strong>：好的提示词让你事半功倍</li>
+          <li>🚪 <strong>降低门槛</strong>：让AI更好地理解你的需求</li>
+          <li>📈 <strong>输出质量</strong>：结构化输出更符合预期</li>
+          <li>📚 <strong>持续学习</strong>：积累提示词就是积累经验</li>
+        </ul>
+      </div>
+
       <!-- 导航 -->
-      <div class="category-nav">
         <a href="#templates" class="category-btn">📋 模板</a>
         <a href="#examples" class="category-btn">📝 案例</a>
         <a href="#advanced" class="category-btn">🚀 技巧</a>
@@ -572,5 +613,83 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .hero h1 { font-size: 2rem; }
     .category-nav { gap: 8px; }
     .category-btn { padding: 8px 15px; font-size: 0.8rem; }
+  }
+
+  /* 快速导航 */
+  .quick-nav { margin-bottom: 40px; }
+  .quick-nav h2 { color: #1a1a2e; font-size: 1.5rem; margin-bottom: 20px; }
+  
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .nav-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+  }
+
+  .nav-card:hover {
+    background: #e91e63;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+  /* 进阶内容 */
+  .advanced-nav { margin-bottom: 40px; }
+  .advanced-nav h2 { color: #1a1a2e; font-size: 1.5rem; margin-bottom: 20px; }
+
+  .nav-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    padding: 10px 18px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+
+  .tag:hover {
+    background: #e91e63;
+    color: #fff;
+  }
+
+  /* 为什么需要提示词 */
+  .why-section { margin-bottom: 40px; }
+  .why-section h2 { color: #1a1a2e; font-size: 1.5rem; margin-bottom: 20px; }
+
+  .why-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .why-list li {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    color: #333;
+  }
+
+  .subtitle {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    margin-top: 10px;
   }
 </style>
