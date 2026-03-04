@@ -14,8 +14,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="content">
     <div class="container">
       
+      <!-- 快速导航 -->
+      <section class="quick-nav">
+        <h2>🏷️ 快速导航</h2>
+        <div class="nav-tags">
+          <a href="#pentest" class="nav-tag red">🔴 渗透测试</a>
+          <a href="#defense" class="nav-tag blue">🔵 防御安全</a>
+          <a href="#forensics" class="nav-tag green">🟢 取证</a>
+          <a href="#reverse" class="nav-tag yellow">🟡 逆向</a>
+          <a href="#web" class="nav-tag blue">🔵 Web安全</a>
+        </div>
+      </section>
+
       <!-- 渗透测试工具 -->
-      <section class="tools-section">
+      <section class="tools-section" id="pentest">
         <h2>🛠️ 渗透测试工具</h2>
         
         <div class="tool-category">
@@ -51,6 +63,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <td>⭐⭐⭐⭐</td>
                 <td>全网扫描</td>
                 <td><a href="https://zmap.io" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>RustScan</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>现代端口扫描</td>
+                <td><a href="https://github.com/RustScan/RustScan" target="_blank">访问</a></td>
               </tr>
             </tbody>
           </table>
@@ -90,6 +109,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <td>Web服务器扫描</td>
                 <td><a href="https://cirt.net/Nikto2" target="_blank">访问</a></td>
               </tr>
+              <tr>
+                <td>Nuclei</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>模板化漏洞扫描</td>
+                <td><a href="https://github.com/projectdiscovery/nuclei" target="_blank">访问</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -128,213 +154,146 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <td>后渗透评估</td>
                 <td><a href="https://bc-security.github.io/empire-wiki/" target="_blank">访问</a></td>
               </tr>
+              <tr>
+                <td>Covenant</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>.NET命令框架</td>
+                <td><a href="https://github.com/cobbr/Covenant" target="_blank">访问</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- 密码学工具 -->
-      <section class="tools-section">
-        <h2>🔐 密码学工具</h2>
-        <table class="tool-table">
-          <thead>
-            <tr>
-              <th>工具</th>
-              <th>类型</th>
-              <th>推荐</th>
-              <th>描述</th>
-              <th>适用场景</th>
-              <th>链接</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Hashcat</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐⭐</td>
-              <td>GPU密码恢复</td>
-              <td>密码破解/恢复</td>
-              <td><a href="https://hashcat.net" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>John the Ripper</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐</td>
-              <td>多功能密码破解</td>
-              <td>离线破解</td>
-              <td><a href="https://www.openwall.com/john/" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>Hydra</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐</td>
-              <td>暴力破解工具</td>
-              <td>在线破解</td>
-              <td><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">访问</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- 网络分析 -->
-      <section class="tools-section">
-        <h2>📡 网络分析</h2>
-        <table class="tool-table">
-          <thead>
-            <tr>
-              <th>工具</th>
-              <th>类型</th>
-              <th>推荐</th>
-              <th>描述</th>
-              <th>适用场景</th>
-              <th>链接</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Wireshark</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐⭐</td>
-              <td>网络协议分析</td>
-              <td>流量分析/抓包</td>
-              <td><a href="https://www.wireshark.org" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>Burp Suite</td>
-              <td>🔄</td>
-              <td>⭐⭐⭐⭐⭐</td>
-              <td>Web安全测试</td>
-              <td>Web渗透测试</td>
-              <td><a href="https://portswigger.net/burp" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>Charles</td>
-              <td>💰</td>
-              <td>⭐⭐⭐⭐</td>
-              <td>HTTP代理</td>
-              <td>移动端抓包</td>
-              <td><a href="https://www.charlesproxy.com" target="_blank">访问</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
       <!-- 防御工具 -->
-      <section class="tools-section">
-        <h2>🛡️ 防御工具</h2>
-        <table class="tool-table">
-          <thead>
-            <tr>
-              <th>工具</th>
-              <th>类型</th>
-              <th>推荐</th>
-              <th>描述</th>
-              <th>适用场景</th>
-              <th>链接</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Suricata</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐⭐</td>
-              <td>入侵检测引擎</td>
-              <td>实时监控</td>
-              <td><a href="https://suricata.io" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>Snort</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐</td>
-              <td>入侵检测系统</td>
-              <td>网络监控</td>
-              <td><a href="https://www.snort.org" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>Wazuh</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐⭐</td>
-              <td>SIEM开源方案</td>
-              <td>统一监控</td>
-              <td><a href="https://wazuh.com" target="_blank">访问</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- 逆向工程 -->
-      <section class="tools-section">
-        <h2>🖥️ 逆向工程</h2>
-        <table class="tool-table">
-          <thead>
-            <tr>
-              <th>工具</th>
-              <th>类型</th>
-              <th>推荐</th>
-              <th>描述</th>
-              <th>链接</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Ghidra</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐⭐</td>
-              <td>NSA开源逆向工具</td>
-              <td><a href="https://ghidra-sre.org" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>IDA Pro</td>
-              <td>💰</td>
-              <td>⭐⭐⭐⭐⭐</td>
-              <td>商业反汇编器</td>
-              <td><a href="https://www.hex-rays.com" target="_blank">访问</a></td>
-            </tr>
-            <tr>
-              <td>Radare2</td>
-              <td>🆓</td>
-              <td>⭐⭐⭐⭐</td>
-              <td>命令行逆向框架</td>
-              <td><a href="https://www.radare.org/n/" target="_blank">访问</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- 使用建议 -->
-      <section class="suggestion-section">
-        <h2>📖 使用建议</h2>
+      <section class="tools-section" id="defense">
+        <h2>🛡️ 防御安全工具</h2>
         
-        <div class="suggestion-card">
-          <h3>新手入门推荐</h3>
-          <ol>
-            <li><strong>Nmap</strong> - 网络扫描入门</li>
-            <li><strong>Burp Suite</strong> - Web安全入门</li>
-            <li><strong>Metasploit</strong> - 渗透框架学习</li>
-            <li><strong>Wireshark</strong> - 流量分析基础</li>
-          </ol>
+        <div class="tool-category">
+          <h3>入侵检测</h3>
+          <table class="tool-table">
+            <thead>
+              <tr>
+                <th>工具</th>
+                <th>类型</th>
+                <th>推荐</th>
+                <th>描述</th>
+                <th>链接</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Snort</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>入侵检测系统</td>
+                <td><a href="https://www.snort.org" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Suricata</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>入侵检测引擎</td>
+                <td><a href="https://suricata.io" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Zeek</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>网络安全监控</td>
+                <td><a href="https://zeek.org" target="_blank">访问</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="suggestion-card">
-          <h3>红队常用组合</h3>
-          <ul>
-            <li>信息收集：Nmap + Maltego + Shodan</li>
-            <li>漏洞扫描：Nessus + OpenVAS</li>
-            <li>渗透测试：Metasploit + Cobalt Strike</li>
-          </ul>
-        </div>
-
-        <div class="suggestion-card">
-          <h3>蓝队常用组合</h3>
-          <ul>
-            <li>网络监控：Suricata + Snort</li>
-            <li>日志分析：OSSEC + Wazuh</li>
-            <li>取证分析：Autopsy + Velociraptor</li>
-          </ul>
+        <div class="tool-category">
+          <h3>日志分析</h3>
+          <table class="tool-table">
+            <thead>
+              <tr>
+                <th>工具</th>
+                <th>类型</th>
+                <th>推荐</th>
+                <th>描述</th>
+                <th>链接</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OSSEC</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>主机完整性</td>
+                <td><a href="https://www.ossec.net" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Wazuh</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>SIEM开源方案</td>
+                <td><a href="https://wazuh.com" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Graylog</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>日志管理</td>
+                <td><a href="https://www.graylog.org" target="_blank">访问</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <!-- 2026年安全工具趋势 -->
+      <!-- Web安全工具 -->
+      <section class="tools-section" id="web">
+        <h2>🔧 Web安全工具</h2>
+        <table class="tool-table">
+          <thead>
+            <tr>
+              <th>工具</th>
+              <th>类型</th>
+              <th>推荐</th>
+              <th>描述</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OWASP ZAP</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>Web应用扫描</td>
+              <td><a href="https://www.zaproxy.org" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>SQLMap</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>SQL注入检测</td>
+              <td><a href="https://sqlmap.org" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>FFUF</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>快速Web扫描</td>
+              <td><a href="https://github.com/ffuf/ffuf" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>Gobuster</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>目录/子域名爆破</td>
+              <td><a href="https://github.com/OJ/gobuster" target="_blank">访问</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 2026年趋势 -->
       <section class="trend-section">
         <h2>📖 2026年安全工具趋势</h2>
         
@@ -344,6 +303,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li><strong>AI安全助手</strong> - 大语言模型辅助安全分析</li>
             <li><strong>自动化渗透测试</strong> - AI驱动的漏洞发现</li>
             <li><strong>智能威胁检测</strong> - ML-based异常检测</li>
+            <li><strong>CodeGPT</strong> - AI代码审计</li>
           </ul>
         </div>
 
@@ -353,6 +313,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li><strong>容器安全</strong> - Docker/Kubernetes安全</li>
             <li><strong>CSPM</strong> - 云安全态势管理</li>
             <li><strong>CWPP</strong> - 云工作负载保护</li>
+            <li><strong>Trivy</strong> - 容器镜像扫描</li>
           </ul>
         </div>
 
@@ -361,8 +322,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <ul>
             <li><strong>SBOM</strong> - 软件物料清单</li>
             <li><strong>SCA</strong> - 软件成分分析</li>
-            <li><strong>代码签名</strong> - 签名验证</li>
+            <li><strong>Sigstore</strong> - 代码签名验证</li>
+            <li><strong>Dependabot</strong> - 依赖检查</li>
           </ul>
+        </div>
+      </section>
+
+      <!-- 实战组合推荐 -->
+      <section class="combo-section">
+        <h2>📖 实战组合推荐</h2>
+        
+        <div class="combo-card green">
+          <h3>🟢 新手入门组合</h3>
+          <table class="combo-table">
+            <tr><td>Nmap</td><td>网络基础</td></tr>
+            <tr><td>Burp Suite</td><td>Web测试基础</td></tr>
+            <tr><td>Metasploit</td><td>框架学习</td></tr>
+            <tr><td>Wireshark</td><td>流量分析</td></tr>
+          </table>
+        </div>
+
+        <div class="combo-card red">
+          <h3>🔴 红队攻击组合</h3>
+          <table class="combo-table">
+            <tr><td>Amass + Shodan</td><td>信息收集</td></tr>
+            <tr><td>Nessus + Nuclei</td><td>漏洞发现</td></tr>
+            <tr><td>Metasploit + Cobalt Strike</td><td>漏洞利用</td></tr>
+            <tr><td>Empire + Covenant</td><td>后渗透</td></tr>
+            <tr><td>CrackMapExec + Evil-WinRM</td><td>域渗透</td></tr>
+          </table>
+        </div>
+
+        <div class="combo-card blue">
+          <h3>🔵 蓝队防御组合</h3>
+          <table class="combo-table">
+            <tr><td>Suricata + Zeek</td><td>网络监控</td></tr>
+            <tr><td>Wazuh + Graylog</td><td>日志分析</td></tr>
+            <tr><td>Velociraptor + OSSEC</td><td>终端安全</td></tr>
+            <tr><td>GRR + Autopsy</td><td>取证调查</td></tr>
+          </table>
         </div>
       </section>
 
@@ -391,120 +389,91 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .legend {
     margin-top: 15px;
     font-size: 0.9rem;
-    color: #f39c12;
+    color: rgba(255,255,255,0.5);
   }
 
   .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 40px 20px;
   }
 
   .content {
-    padding: 40px 0;
-  }
-
-  .tools-section {
-    margin-bottom: 50px;
+    background: #fafafa;
+    min-height: 60vh;
   }
 
   h2 {
     color: #1a1a2e;
-    font-size: 1.8rem;
-    margin-bottom: 25px;
+    font-size: 1.5rem;
+    margin: 40px 0 25px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #e74c3c;
+    border-bottom: 2px solid #e74c3c;
   }
 
-  .tool-category {
-    margin-bottom: 30px;
+  /* Quick Nav */
+  .quick-nav { margin-bottom: 30px; }
+
+  .nav-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
+
+  .nav-tag {
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .nav-tag.red { background: #ffeaea; color: #e74c3c; }
+  .nav-tag.blue { background: #e3f2fd; color: #1976d2; }
+  .nav-tag.green { background: #e8f5e9; color: #388e3c; }
+  .nav-tag.yellow { background: #fff8e1; color: #f57c00; }
+
+  .nav-tag:hover { transform: translateY(-2px); }
+
+  /* Tool Table */
+  .tool-category { margin-bottom: 30px; }
 
   .tool-category h3 {
-    color: #333;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+    color: #1a1a2e;
+    font-size: 1.2rem;
+    margin: 20px 0 15px;
   }
 
   .tool-table {
     width: 100%;
-    border-collapse: collapse;
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   }
 
   .tool-table th, .tool-table td {
-    padding: 12px 10px;
-    text-align: center;
+    padding: 12px 15px;
+    text-align: left;
     border-bottom: 1px solid #eee;
-    font-size: 0.9rem;
   }
 
   .tool-table th {
-    background: #e74c3c;
-    color: #fff;
-    font-weight: 600;
-  }
-
-  .tool-table td:first-child {
+    background: #f5f5f5;
     font-weight: 600;
     color: #1a1a2e;
   }
 
-  .tool-table tr:hover {
-    background: #f9f9f9;
-  }
+  .tool-table td { color: #333; }
+
+  .tool-table tr:last-child td { border-bottom: none; }
 
   .tool-table a {
     color: #e74c3c;
     text-decoration: none;
-    padding: 4px 10px;
-    border: 1px solid #e74c3c;
-    border-radius: 4px;
-    font-size: 0.8rem;
   }
 
-  .tool-table a:hover {
-    background: #e74c3c;
-    color: #fff;
-  }
-
-  .suggestion-section {
-    margin-bottom: 50px;
-  }
-
-  .suggestion-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-left: 4px solid #e74c3c;
-  }
-
-  .suggestion-card h3 {
-    color: #e74c3c;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
-
-  .suggestion-card ol, .suggestion-card ul {
-    margin: 0;
-    padding-left: 20px;
-  }
-
-  .suggestion-card li {
-    padding: 8px 0;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  .trend-section {
-    margin-bottom: 50px;
-  }
-
+  /* Trend Cards */
   .trend-card {
     background: #fff;
     border-radius: 12px;
@@ -514,35 +483,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-left: 4px solid #e74c3c;
   }
 
-  .trend-card h3 {
-    color: #e74c3c;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
+  .trend-card h3 { color: #e74c3c; margin-bottom: 15px; }
 
-  .trend-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  .trend-card ul { list-style: none; padding: 0; }
 
   .trend-card li {
-    padding: 10px 0;
+    padding: 8px 0;
     color: #333;
     border-bottom: 1px solid #eee;
   }
 
-  .trend-card li:last-child {
-    border-bottom: none;
+  .trend-card li:last-child { border-bottom: none; }
+
+  /* Combo Cards */
+  .combo-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   }
 
-  @media (max-width: 768px) {
-    .tool-table {
-      font-size: 0.8rem;
-    }
-    
-    .tool-table th, .tool-table td {
-      padding: 8px 5px;
-    }
-  }
+  .combo-card.green { border-left: 4px solid #27ae60; }
+  .combo-card.red { border-left: 4px solid #e74c3c; }
+  .combo-card.blue { border-left: 4px solid #3498db; }
+
+  .combo-card h3 { margin-bottom: 15px; }
+  .combo-card.green h3 { color: #27ae60; }
+  .combo-card.red h3 { color: #e74c3c; }
+  .combo-card.blue h3 { color: #3498db; }
+
+  .combo-table { width: 100%; }
+  .combo-table td { padding: 10px; border-bottom: 1px solid #eee; }
+  .combo-table td:first-child { font-weight: 500; }
 </style>
