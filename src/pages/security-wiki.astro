@@ -2,11 +2,337 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="安全知识库 - 观复阁">
-  <div class="hero"><h1>🔮 安全知识库</h1><p>安全技术文章</p></div>
+<BaseLayout title="安全知识库 - 观复阁" description="观复阁安全知识库 - 漏洞分类、案例分析、安全研究">
+  <section class="hero">
+    <div class="container">
+      <h1>🔮 安全知识库</h1>
+      <p>漏洞分类 · 案例分析 · 安全研究</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      
+      <!-- 漏洞等级分类 -->
+      <section class="vuln-section">
+        <h2>⚠️ 漏洞等级分类</h2>
+        
+        <div class="vuln-card critical">
+          <h3>🔴 Critical - 严重</h3>
+          <p class="desc">可被直接利用，造成重大影响</p>
+          <ul>
+            <li>未授权访问敏感数据</li>
+            <li>远程代码执行</li>
+            <li>权限绕过</li>
+          </ul>
+        </div>
+
+        <div class="vuln-card high">
+          <h3>🟠 High - 高危</h3>
+          <p class="desc">利用难度较低，影响较大</p>
+          <ul>
+            <li>SQL注入</li>
+            <li>文件上传漏洞</li>
+            <li>XSS跨站脚本</li>
+          </ul>
+        </div>
+
+        <div class="vuln-card medium">
+          <h3>🟡 Medium - 中危</h3>
+          <p class="desc">利用条件较复杂，影响有限</p>
+          <ul>
+            <li>CSRF跨站请求伪造</li>
+            <li>信息泄露</li>
+            <li>弱口令</li>
+          </ul>
+        </div>
+
+        <div class="vuln-card low">
+          <h3>🔵 Low - 低危</h3>
+          <p class="desc">利用困难，影响小</p>
+          <ul>
+            <li>目录遍历</li>
+            <li>提示信息泄露</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CVE/CNNVD案例分析 -->
+      <section class="case-section">
+        <h2>📋 CVE/CNNVD案例分析</h2>
+        
+        <div class="case-card">
+          <h3>近期高危漏洞</h3>
+          <ul class="cve-list">
+            <li>
+              <span class="cve-id">CVE-2024-27198</span>
+              <span class="cve-name">TeamCity 认证绕过漏洞</span>
+              <span class="cve-level critical">Critical</span>
+            </li>
+            <li>
+              <span class="cve-id">CVE-2024-23897</span>
+              <span class="cve-name">Jenkins 任意文件读取</span>
+              <span class="cve-level high">High</span>
+            </li>
+            <li>
+              <span class="cve-id">CVE-2023-44487</span>
+              <span class="cve-name">HTTP/2 Rapid Reset DoS</span>
+              <span class="cve-level high">High</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 漏洞搜索入口 -->
+      <section class="search-section">
+        <h2>🔍 漏洞搜索入口</h2>
+        
+        <div class="search-cards">
+          <a href="https://www.cnnvd.org.cn" target="_blank" class="search-card">
+            <h3>🇨🇳 CNNVD</h3>
+            <p>国家信息安全漏洞库</p>
+            <span class="link">访问 →</span>
+          </a>
+          <a href="https://cve.mitre.org" target="_blank" class="search-card">
+            <h3>🌍 CVE</h3>
+            <p>通用漏洞披露</p>
+            <span class="link">访问 →</span>
+          </a>
+          <a href="https://nvd.nist.gov" target="_blank" class="search-card">
+            <h3>🇺🇸 NVD</h3>
+            <p>美国国家漏洞数据库</p>
+            <span class="link">访问 →</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .hero { text-align: center; padding: 4rem; background: linear-gradient(135deg, #1a1a2e, #16213e); }
-  .hero h1 { color: #3498db; font-size: 2.5rem; }
+  .hero {
+    text-align: center;
+    padding: 4rem 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+  }
+
+  .hero h1 {
+    color: #3498db;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 40px 0;
+  }
+
+  h2 {
+    color: #1a1a2e;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3498db;
+  }
+
+  .vuln-section {
+    margin-bottom: 50px;
+  }
+
+  .vuln-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .vuln-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .vuln-card .desc {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+  }
+
+  .vuln-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .vuln-card li {
+    padding: 8px 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+  }
+
+  .vuln-card li:last-child {
+    border-bottom: none;
+  }
+
+  .vuln-card.critical {
+    border-left: 5px solid #e74c3c;
+  }
+
+  .vuln-card.critical h3 {
+    color: #e74c3c;
+  }
+
+  .vuln-card.high {
+    border-left: 5px solid #e67e22;
+  }
+
+  .vuln-card.high h3 {
+    color: #e67e22;
+  }
+
+  .vuln-card.medium {
+    border-left: 5px solid #f1c40f;
+  }
+
+  .vuln-card.medium h3 {
+    color: #f39c12;
+  }
+
+  .vuln-card.low {
+    border-left: 5px solid #3498db;
+  }
+
+  .vuln-card.low h3 {
+    color: #3498db;
+  }
+
+  .case-section {
+    margin-bottom: 50px;
+  }
+
+  .case-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .case-card h3 {
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+
+  .cve-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .cve-list li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    gap: 15px;
+  }
+
+  .cve-list li:last-child {
+    border-bottom: none;
+  }
+
+  .cve-id {
+    font-family: monospace;
+    background: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .cve-name {
+    flex: 1;
+    color: #333;
+  }
+
+  .cve-level {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .cve-level.critical {
+    background: #ffeaea;
+    color: #e74c3c;
+  }
+
+  .cve-level.high {
+    background: #fff3e0;
+    color: #e67e22;
+  }
+
+  .search-section {
+    margin-bottom: 50px;
+  }
+
+  .search-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .search-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    display: block;
+  }
+
+  .search-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .search-card h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+
+  .search-card p {
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .search-card .link {
+    color: #3498db;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    .cve-list li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
 </style>
