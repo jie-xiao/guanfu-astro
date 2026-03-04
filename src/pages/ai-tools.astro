@@ -6,7 +6,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="hero">
     <h1>🤖 AI工具导航</h1>
     <p>收录各类AI工具，分类清晰，快速查找，定期更新</p>
-    <p style="margin-top:1rem;font-size:0.9rem;opacity:0.7">收录50+款AI工具，包含对话、图像、视频、音频、编程等领域</p>
+    <p style="margin-top:1rem;font-size:0.9rem;opacity:0.7">收录60+款AI工具，包含对话、图像、视频、音频、编程、搜索、办公等领域</p>
+    <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.6">🏷️ 标记说明：🆓免费 | 💰付费 | 🔄 freemium（基础免费/高级付费）</p>
   </div>
 
   <div class="content">
@@ -15,19 +16,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="tool-grid">
         <div class="tool-card">
           <h3>ChatGPT</h3>
-          <p>OpenAI推出的对话AI，GPT-4模型能力强大，支持多模态</p>
+          <p>OpenAI推出的对话AI，GPT-4模型能力强大，支持多模态。适合文案写作、代码开发、数据分析。</p>
           <span class="tag">对话</span>
+          <span class="tag-free">🔄</span>
+          <p class="场景">💡 场景：文案写作、编程、学习辅助</p>
           <a href="https://chat.openai.com" target="_blank" class="link">访问</a>
         </div>
         <div class="tool-card">
           <h3>Claude</h3>
-          <p>Anthropic推出的AI助手，长文本处理能力强，编程能力突出</p>
+          <p>Anthropic推出的AI助手，长文本处理能力强，编程能力突出。适合长文档分析、代码审查。</p>
           <span class="tag">对话</span>
+          <span class="tag-free">🔄</span>
+          <p class="场景">💡 场景：长文本分析、代码审查、创意写作</p>
           <a href="https://claude.ai" target="_blank" class="link">访问</a>
         </div>
         <div class="tool-card">
           <h3>DeepSeek</h3>
-          <p>国产开源大模型，性能对标GPT-4，免费使用</p>
+          <p>国产开源大模型，性能对标GPT-4，API价格便宜。适合国内开发者使用。</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🆓</span>
+          <p class="场景">💡 场景：编程开发、本地部署、成本控制</p>
+          <a href="https://www.deepseek.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>文心一言</h3>
+          <p>百度推出的生成式AI产品，中文理解能力强，适合国内场景。</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🔄</span>
+          <p class="场景">💡 场景：中文创作、知识问答、商业应用</p>
+          <a href="https://yiyan.baidu.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Kimi</h3>
+          <p>月之暗面推出的AI助手，超长上下文，支持200万字，适合长文档处理。</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🆓</span>
+          <p class="场景">💡 场景：长文档分析、论文阅读、合同审核</p>
+          <a href="https://kimi.moonshot.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>通义千问</h3>
+          <p>阿里巴巴推出的AI助手，开源版本Qwen性能优秀，本地部署首选。</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🆓</span>
+          <p class="场景">💡 场景：开源部署、企业私有化、电商客服</p>
+          <a href="https://tongyi.aliyun.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>讯飞星火</h3>
+          <p>科大讯飞推出的认知大模型，语音能力突出，语音交互效果好。</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🔄</span>
+          <p class="场景">💡 场景：语音助手、智能客服、教育培训</p>
+          <a href="https://xinghuo.xfyun.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>智谱清言</h3>
+          <p>智谱AI推出的对话助手，基于ChatGLM4，性能稳定。</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🔄</span>
+          <p class="场景">💡 场景：知识库对话、企业应用、API调用</p>
+          <a href="https://www.zhipuai.cn" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
           <span class="tag">对话</span>
           <a href="https://www.deepseek.com" target="_blank" class="link">访问</a>
         </div>
@@ -382,5 +434,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .link:hover {
     color: #70b8ff;
+  }
+
+  .tag-free {
+    display: inline-block;
+    background: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+  }
+
+  .场景 {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
   }
 </style>

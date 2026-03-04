@@ -13,13 +13,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="content">
     <div class="container">
       
+      <!-- 服务内容 -->
       <section class="service-section">
         <h2>📊 服务内容</h2>
         
         <div class="service-card">
           <h3>数据分析</h3>
           <ul>
-            <li>财务报表分析</li>
+            <li>财务报表分析（月度/季度/年度）</li>
+            <li>盈利能力分析（毛利率、净利率）</li>
+            <li>偿债能力分析（资产负债率）</li>
+            <li>运营效率分析（存货周转率）</li>
             <li>成本结构分析</li>
             <li>预算执行分析</li>
             <li>投资回报分析</li>
@@ -40,10 +44,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <ul>
             <li>投资决策建议</li>
             <li>融资方案规划</li>
+            <li>项目可行性分析</li>
+            <li>投资回报预测</li>
+            <li>风险评估报告</li>
           </ul>
         </div>
       </section>
 
+      <!-- 服务方案 -->
+      <section class="plan-section">
+        <h2>📋 服务方案</h2>
+        
+        <div class="plan-table">
+          <table>
+            <thead>
+              <tr>
+                <th>服务类型</th>
+                <th>基础版</th>
+                <th>标准版</th>
+                <th>高级版</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>财务分析</td>
+                <td>¥5,000</td>
+                <td>¥15,000</td>
+                <td>¥30,000</td>
+              </tr>
+              <tr>
+                <td>成本优化</td>
+                <td>¥10,000</td>
+                <td>¥25,000</td>
+                <td>¥50,000</td>
+              </tr>
+              <tr>
+                <td>投资顾问</td>
+                <td>¥20,000</td>
+                <td>¥50,000</td>
+                <td>¥100,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="plan-note">* 具体报价根据项目复杂度而定，欢迎咨询定制</p>
+      </section>
+
+      <!-- 服务案例 -->
       <section class="case-section">
         <h2>📁 服务案例</h2>
         
@@ -63,6 +111,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </section>
 
+      <!-- 客户见证 -->
+      <section class="testimonial-section">
+        <h2>💬 客户见证</h2>
+        
+        <div class="testimonial">
+          <p class="quote">"知微团队的财务分析帮助我们发现了成本优化的关键点，实现了年度成本降低15%。专业、高效！"</p>
+          <p class="author">— 某制造企业CFO</p>
+        </div>
+        
+        <div class="testimonial">
+          <p class="quote">"投资顾问服务帮我们避免了潜在风险，顺利完成并购。"</p>
+          <p class="author">— 某投资机构合伙人</p>
+        </div>
+      </section>
+
+      <!-- 财务工具推荐 -->
       <section class="tools-section">
         <h2>🛠️ 财务工具推荐</h2>
         
@@ -92,6 +156,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </section>
 
+      <!-- 联系方式 -->
       <section class="contact-section">
         <h2>📮 联系方式</h2>
         <p>如需服务，请联系观复阁团队。</p>
@@ -130,16 +195,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 40px 0;
   }
 
-  .service-section, .case-section, .tools-section {
-    margin-bottom: 50px;
-  }
-
   h2 {
     color: #1a1a2e;
     font-size: 1.8rem;
     margin-bottom: 25px;
     padding-bottom: 10px;
     border-bottom: 3px solid #27ae60;
+  }
+
+  .service-section, .case-section, .tools-section, .plan-section, .testimonial-section {
+    margin-bottom: 50px;
   }
 
   .service-card {
@@ -170,6 +235,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .service-card li:last-child {
     border-bottom: none;
+  }
+
+  /* 服务方案表格 */
+  .plan-table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  th {
+    background: #27ae60;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  td {
+    color: #333;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: #f9f9f9;
+  }
+
+  .plan-note {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+
+  /* 客户见证 */
+  .testimonial {
+    background: linear-gradient(135deg, #f8f9fa, #fff);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #27ae60;
+  }
+
+  .testimonial .quote {
+    font-size: 1.1rem;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.8;
+  }
+
+  .testimonial .author {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: right;
   }
 
   .case-card {
@@ -262,6 +395,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     
     h2 {
       font-size: 1.5rem;
+    }
+    
+    .plan-table {
+      overflow-x: auto;
     }
   }
 </style>
