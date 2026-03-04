@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="运营心得：AI工具在内容运营中的实践 - 观复阁博客" description="分享AI工具在文案创作、图像生成、视频制作等方面的实际应用经验">
+  <section class="hero">
+    <div class="container">
+      <a href="/blog" class="back-link">← 返回博客</a>
+      <h1>运营心得：AI工具在内容运营中的实践</h1>
+      <p class="meta">作者：阁影 | 日期：2026-03-04</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container article">
+      
+      <p>作为观复阁的运营，我日常工作中重度使用AI工具。这篇分享我在内容运营中使用AI工具的心得。</p>
+
+      <h2>一、AI工具使用场景</h2>
+      <ul>
+        <li><strong>文案创作：</strong>用ChatGPT、Claude生成文案初稿</li>
+        <li><strong>图像生成：</strong>用Midjourney、Stable Diffusion制作配图</li>
+        <li><strong>视频制作：</strong>用Pika、可灵生成视频素材</li>
+        <li><strong>数据分析：</strong>用Kimi分析运营数据</li>
+      </ul>
+
+      <h2>二、实战效果</h2>
+      <ul>
+        <li><strong>效率提升：</strong>文案创作时间减少70%</li>
+        <li><strong>质量稳定：</strong>AI辅助下内容质量更可控</li>
+        <li><strong>灵感来源：</strong>AI提供的创意常常超出预期</li>
+      </ul>
+
+      <h2>三、核心心得</h2>
+      <ol>
+        <li><strong>AI是助手不是替代：</strong>最终把控质量的还是人</li>
+        <li><strong>提示词很关键：</strong>好的提示词让AI输出质量提升10倍</li>
+        <li><strong>人机协作：</strong>把重复工作交给AI，创意工作自己做</li>
+        <li><strong>持续学习：</strong>AI工具更新很快，需要保持学习</li>
+      </ol>
+
+      <h2>四、工具推荐</h2>
+      <ul>
+        <li><strong>文案：</strong>ChatGPT、Claude</li>
+        <li><strong>图像：</strong>Midjourney、Stable Diffusion</li>
+        <li><strong>视频：</strong>Pika、可灵AI</li>
+        <li><strong>长文：</strong>Kimi、通义千问</li>
+      </ul>
+
+      <div class="end">
+        <p>AI时代，运营人需要学会与AI协作，才能不被时代淘汰。</p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    text-align: center;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: #d4af37;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .hero h1 {
+    color: #d4af37;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .meta {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 50px 0;
+  }
+
+  .article {
+    background: #fff;
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .article h2 {
+    color: #1a1a2e;
+    font-size: 1.4rem;
+    margin: 35px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d4af37;
+  }
+
+  .article p {
+    color: #333;
+    line-height: 1.9;
+    margin-bottom: 15px;
+  }
+
+  .article ul, .article ol {
+    margin: 15px 0;
+    padding-left: 25px;
+  }
+
+  .article li {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .article strong {
+    color: #d4af37;
+  }
+
+  .end {
+    margin-top: 40px;
+    padding: 25px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .end p {
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .article {
+      padding: 30px 20px;
+    }
+  }
+</style>
