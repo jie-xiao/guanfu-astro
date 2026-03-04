@@ -41,6 +41,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <a href="#faq" class="tag">❓ 常见问题</a>
           <a href="#map" class="tag">🗺️ 能力地图</a>
           <a href="#best-practice" class="tag">✨ 最佳实践</a>
+          <a href="#trends" class="tag">🔥 2026趋势</a>
+        </div>
+      </div>
+
+      <!-- 2026趋势 -->
+      <div class="section" id="trends">
+        <h2>🔥 2026年AI提示词趋势</h2>
+        
+        <div class="card">
+          <h3>🤖 多模态提示词</h3>
+          <p>2026年AI从纯文本扩展到图像、视频、音频多模态。</p>
+          <pre class="code-block">请分析这张图片[图片]，结合以下文字描述[文字]，
+找出它们之间的关联，并生成一段总结。</pre>
+        </div>
+
+        <div class="card">
+          <h3>📚 长上下文窗口</h3>
+          <p>最新模型支持超长上下文（100K+ tokens），可以处理整本书籍。</p>
+          <pre class="code-block">请阅读以下长文[全文]，然后回答：
+1. 文章的核心观点是什么？
+2. 第X段提到的关键数据？
+3. 总结文章的三个要点？</pre>
+        </div>
+
+        <div class="card">
+          <h3>🔄 Agent工作流</h3>
+          <p>AI Agent能够自主规划和执行多步骤任务。</p>
+          <pre class="code-block">请作为[Agent角色]，完成以下任务[任务]：
+
+步骤：
+1. [步骤1]
+2. [步骤2]
+3. [步骤3]
+
+请在每一步完成后汇报进度。</pre>
+        </div>
+
+        <div class="card">
+          <h3>🔗 RAG增强提示词</h3>
+          <p>结合检索增强生成，让AI引用最新信息。</p>
+          <pre class="code-block">基于以下背景知识[知识库]：
+[内容]
+
+请回答用户问题[问题]。
+如果知识库中没有相关信息，请明确说明。</pre>
+        </div>
+
+        <div class="card">
+          <h3>🧠 思维链提示词（CoT）</h3>
+          <p>让AI展示推理过程，提高复杂任务准确率。</p>
+          <pre class="code-block">请一步步思考并回答：
+
+问题：[复杂问题]
+
+请按以下格式输出：
+1. 问题分析：...
+2. 因素拆解：...
+3. 推理过程：...
+4. 最终结论：...</pre>
         </div>
       </div>
 
