@@ -224,6 +224,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </section>
 
+      <!-- 服务优势 -->
+      <section class="advantage-section">
+        <h2>⭐ 服务优势</h2>
+        
+        <div class="advantage-grid">
+          <div class="advantage-card">
+            <h3>🎯 专业团队</h3>
+            <p>5年以上行业经验，资深财务专家团队</p>
+          </div>
+          <div class="advantage-card">
+            <h3>⚡ 高效交付</h3>
+            <p>快速响应，准时交付高质量成果</p>
+          </div>
+          <div class="advantage-card">
+            <h3>🔒 保密协议</h3>
+            <p>严格数据安全保护，签署保密协议</p>
+          </div>
+          <div class="advantage-card">
+            <h3>🤝 售后跟踪</h3>
+            <p>持续支持，定期回访优化建议</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 团队介绍 -->
+      <section class="team-section">
+        <h2>👥 团队介绍</h2>
+        
+        <div class="team-card">
+          <h3>💼 财务分析师</h3>
+          <ul>
+            <li><strong>背景：</strong>四大会计师事务所</li>
+            <li><strong>专长：</strong>财务尽调、并购咨询</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <h3>📊 税务顾问</h3>
+          <ul>
+            <li><strong>背景：</strong>注册税务师</li>
+            <li><strong>专长：</strong>税务筹划、风险控制</li>
+          </ul>
+        </div>
+      </section>
+
       <!-- FAQ -->
       <section class="faq-section">
         <h2>❓ 常见问题</h2>
@@ -645,6 +690,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .btn:hover {
     background: #219a52;
     transform: translateY(-2px);
+  }
+
+  /* 服务优势 */
+  .advantage-section { margin-bottom: 50px; }
+
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .advantage-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-top: 4px solid #27ae60;
+  }
+
+  .advantage-card h3 {
+    color: #27ae60;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .advantage-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  /* 团队介绍 */
+  .team-section { margin-bottom: 50px; }
+
+  .team-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #27ae60;
+  }
+
+  .team-card h3 {
+    color: #27ae60;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .team-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .team-card li {
+    padding: 8px 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+  }
+
+  .team-card li:last-child {
+    border-bottom: none;
   }
 
   @media (max-width: 600px) {
