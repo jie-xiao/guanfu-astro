@@ -122,6 +122,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <p><strong>修复建议：</strong>更新HTTP/2库到最新版本</p>
           </div>
         </div>
+
+        <div class="cve-card critical">
+          <h3>CVE-2024-21762 - FortiOS SSL-VPN RCE</h3>
+          <div class="cve-detail">
+            <p><strong>漏洞类型：</strong>远程代码执行 (RCE)</p>
+            <p><strong>影响版本：</strong>FortiOS 7.4.0-7.4.2, 7.2.0-7.2.6</p>
+            <p><strong>危害等级：</strong>🔴 Critical (CVSS 9.8)</p>
+            <p><strong>漏洞描述：</strong>SSL-VPN缓冲区溢出，可远程执行代码</p>
+            <p><strong>利用条件：</strong>需要公网访问SSL-VPN</p>
+            <p><strong>修复建议：</strong>升级到 FortiOS 7.4.3 或 7.2.7</p>
+          </div>
+        </div>
+
+        <div class="cve-card critical">
+          <h3>CVE-2024-1709 - Screen Connect认证绕过</h3>
+          <div class="cve-detail">
+            <p><strong>漏洞类型：</strong>认证绕过</p>
+            <p><strong>影响版本：</strong>Screen Connect < 23.9.8</p>
+            <p><strong>危害等级：</strong>🔴 Critical</p>
+            <p><strong>漏洞描述：</strong>未经身份验证即可访问管理后台</p>
+            <p><strong>利用条件：</strong>无需认证，直接访问</p>
+            <p><strong>修复建议：</strong>升级到最新版本</p>
+          </div>
+        </div>
       </section>
 
       <!-- 漏洞搜索入口 -->
