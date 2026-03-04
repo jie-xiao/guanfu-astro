@@ -18,6 +18,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="#templates" class="category-btn">📋 模板</a>
         <a href="#examples" class="category-btn">📝 案例</a>
         <a href="#advanced" class="category-btn">🚀 技巧</a>
+        <a href="#map" class="category-btn">🗺️ 地图</a>
+        <a href="#best-practice" class="category-btn">✨ 最佳实践</a>
         <a href="#benchmark" class="category-btn">📊 评测</a>
         <a href="#pitfall" class="category-btn">⚠️ 避坑</a>
         <a href="#scenarios" class="category-btn">💼 场景</a>
@@ -124,6 +126,108 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 2. 因素拆解
 3. 因果推导
 4. 结论得出</pre>
+        </div>
+      </div>
+
+      <!-- 能力地图 -->
+      <div class="section" id="map">
+        <h2>🗺️ 提示词能力地图</h2>
+        
+        <div class="card">
+          <h3>📚 入门阶段（1-7天）</h3>
+          <table class="能力表">
+            <tr><th>技能</th><th>描述</th><th>练习方法</th></tr>
+            <tr><td>基础对话</td><td>简单问答</td><td>每天问AI一个生活问题</td></tr>
+            <tr><td>信息提取</td><td>从文本中提取信息</td><td>用新闻文章练习</td></tr>
+            <tr><td>内容改写</td><td>改写/润色文本</td><td>改写自己的旧文章</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>📚 进阶阶段（8-30天）</h3>
+          <table class="能力表">
+            <tr><th>技能</th><th>描述</th><th>练习方法</th></tr>
+            <tr><td>角色扮演</td><td>指定AI角色</td><td>模拟不同职业对话</td></tr>
+            <tr><td>结构化输出</td><td>JSON/表格/列表</td><td>要求AI输出特定格式</td></tr>
+            <tr><td>思维链</td><td>逐步推理</td><td>要求"请一步步思考"</td></tr>
+            <tr><td>上下文管理</td><td>提供背景信息</td><td>练习提供完整上下文</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>📚 高级阶段（31-90天）</h3>
+          <table class="能力表">
+            <tr><th>技能</th><th>描述</th><th>练习方法</th></tr>
+            <tr><td>多轮对话</td><td>复杂任务分解</td><td>拆分复杂任务为多轮</td></tr>
+            <tr><td>提示链</td><td>多步骤提示组合</td><td>练习提示词流水线</td></tr>
+            <tr><td>自我优化</td><td>基于反馈迭代</td><td>不断优化提示词</td></tr>
+            <tr><td>工具组合</td><td>结合外部工具</td><td>练习工作流设计</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>📚 专业阶段（90天+）</h3>
+          <table class="能力表">
+            <tr><th>技能</th><th>描述</th><th>练习方法</th></tr>
+            <tr><td>系统设计</td><td>构建提示词系统</td><td>设计自动化工作流</td></tr>
+            <tr><td>评估优化</td><td>建立评估标准</td><td>量化提示词效果</td></tr>
+            <tr><td>团队应用</td><td>提示词模板化</td><td>建立团队知识库</td></tr>
+            <tr><td>创新方法</td><td>探索新技巧</td><td>持续实验创新</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 最佳实践 -->
+      <div class="section" id="best-practice">
+        <h2>✨ 提示词最佳实践</h2>
+        
+        <div class="card">
+          <h3>🎯 核心原则</h3>
+          <ul class="principle-list">
+            <li><strong>清晰明确</strong> - 需求越清晰，输出越准确</li>
+            <li><strong>结构化</strong> - 有结构的信息更容易被理解</li>
+            <li><strong>上下文丰富</strong> - 上下文越多，理解越准确</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>📋 黄金法则</h3>
+          <table class="法则表">
+            <tr><th>法则</th><th>错误示例</th><th>正确示例</th></tr>
+            <tr><td>角色指定</td><td>帮我写一篇介绍</td><td>请作为资深科技记者，写一篇测评</td></tr>
+            <tr><td>格式明确</td><td>给我一些建议</td><td>请以表格形式输出3个建议</td></tr>
+            <tr><td>示例引导</td><td>写得更有创意一点</td><td>请参考以下风格写：[示例]</td></tr>
+            <tr><td>约束具体</td><td>不要太正式</td><td>请用轻松幽默的语气，约300字</td></tr>
+            <tr><td>分步执行</td><td>帮我完成这个项目</td><td>第一步：... 第二步：... 第三步：...</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>🔄 常见模式</h3>
+          <div class="模式">
+            <h4>RACE模式</h4>
+            <p>Role（角色）→ Action（动作）→ Content（内容）→ Expectation（期望）</p>
+          </div>
+          <div class="模式">
+            <h4>BROKE模式</h4>
+            <p>Background → Role → Objective → Key Results → Evaluate</p>
+          </div>
+          <div class="模式">
+            <h4>CTF模式</h4>
+            <p>Context（上下文）→ Task（任务）→ Format（格式）</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>✅ 检查清单</h3>
+          <ul class="checklist">
+            <li>任务明确吗？</li>
+            <li>背景信息够吗？</li>
+            <li>格式指定了吗？</li>
+            <li>长度限制了吗？</li>
+            <li>风格要求清晰吗？</li>
+            <li>有矛盾要求吗？</li>
+          </ul>
         </div>
       </div>
 
@@ -421,6 +525,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .card.warning { border-left: 4px solid #e74c3c; }
   .wrong { color: #e74c3c; text-decoration: line-through; margin: 5px 0; }
   .correct { color: #27ae60; }
+
+  .能力表, .法则表 {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  .能力表 th, .能力表 td, .法则表 th, .法则表 td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .能力表 th, .法则表 th { background: #f5f5f5; }
+
+  .principle-list { list-style: none; padding: 0; }
+  .principle-list li { padding: 12px 0; border-bottom: 1px solid #eee; }
+  .principle-list li:before { content: "💡 "; }
+
+  .模式 { background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 10px 0; }
+  .模式 h4 { color: #e91e63; margin-bottom: 8px; }
+  .模式 p { color: #666; margin: 0; font-size: 0.9rem; }
 
   .checklist { list-style: none; padding: 0; }
   .checklist li { padding: 8px 0; border-bottom: 1px solid #eee; }
