@@ -2,11 +2,480 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="安全工具 - 观复阁">
-  <div class="hero"><h1>🛡️ 安全工具导航</h1><p>安全工具集合</p></div>
+<BaseLayout title="安全工具导航 - 观复阁" description="观复阁安全工具导航 - 为安全从业者精选工具">
+  <section class="hero">
+    <div class="container">
+      <h1>🛡️ 安全工具导航</h1>
+      <p>为安全从业者精选工具</p>
+      <p class="legend">🆓免费 | 💰付费 | 🔄freemium</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      
+      <!-- 渗透测试工具 -->
+      <section class="tools-section">
+        <h2>🛠️ 渗透测试工具</h2>
+        
+        <div class="tool-category">
+          <h3>网络扫描</h3>
+          <table class="tool-table">
+            <thead>
+              <tr>
+                <th>工具</th>
+                <th>类型</th>
+                <th>推荐</th>
+                <th>描述</th>
+                <th>链接</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nmap</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>网络映射器和端口扫描器</td>
+                <td><a href="https://nmap.org" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Masscan</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>高速端口扫描</td>
+                <td><a href="https://github.com/robertdavidgraham/masscan" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>ZMap</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>全网扫描</td>
+                <td><a href="https://zmap.io" target="_blank">访问</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tool-category">
+          <h3>漏洞扫描</h3>
+          <table class="tool-table">
+            <thead>
+              <tr>
+                <th>工具</th>
+                <th>类型</th>
+                <th>推荐</th>
+                <th>描述</th>
+                <th>链接</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nessus</td>
+                <td>💰</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>商业漏洞扫描神器</td>
+                <td><a href="https://www.tenable.com/products/nessus" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>OpenVAS</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>开源漏洞扫描</td>
+                <td><a href="https://www.openvas.org" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Nikto</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>Web服务器扫描</td>
+                <td><a href="https://cirt.net/Nikto2" target="_blank">访问</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tool-category">
+          <h3>渗透框架</h3>
+          <table class="tool-table">
+            <thead>
+              <tr>
+                <th>工具</th>
+                <th>类型</th>
+                <th>推荐</th>
+                <th>描述</th>
+                <th>链接</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Metasploit</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>渗透测试框架鼻祖</td>
+                <td><a href="https://www.metasploit.com" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Cobalt Strike</td>
+                <td>💰</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>红队协作平台</td>
+                <td><a href="https://www.cobaltstrike.com" target="_blank">访问</a></td>
+              </tr>
+              <tr>
+                <td>Empire</td>
+                <td>🆓</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>后渗透评估</td>
+                <td><a href="https://bc-security.github.io/empire-wiki/" target="_blank">访问</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 密码学工具 -->
+      <section class="tools-section">
+        <h2>🔐 密码学工具</h2>
+        <table class="tool-table">
+          <thead>
+            <tr>
+              <th>工具</th>
+              <th>类型</th>
+              <th>推荐</th>
+              <th>描述</th>
+              <th>适用场景</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hashcat</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>GPU密码恢复</td>
+              <td>密码破解/恢复</td>
+              <td><a href="https://hashcat.net" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>John the Ripper</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>多功能密码破解</td>
+              <td>离线破解</td>
+              <td><a href="https://www.openwall.com/john/" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>Hydra</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>暴力破解工具</td>
+              <td>在线破解</td>
+              <td><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">访问</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 网络分析 -->
+      <section class="tools-section">
+        <h2>📡 网络分析</h2>
+        <table class="tool-table">
+          <thead>
+            <tr>
+              <th>工具</th>
+              <th>类型</th>
+              <th>推荐</th>
+              <th>描述</th>
+              <th>适用场景</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wireshark</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>网络协议分析</td>
+              <td>流量分析/抓包</td>
+              <td><a href="https://www.wireshark.org" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>Burp Suite</td>
+              <td>🔄</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>Web安全测试</td>
+              <td>Web渗透测试</td>
+              <td><a href="https://portswigger.net/burp" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>Charles</td>
+              <td>💰</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>HTTP代理</td>
+              <td>移动端抓包</td>
+              <td><a href="https://www.charlesproxy.com" target="_blank">访问</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 防御工具 -->
+      <section class="tools-section">
+        <h2>🛡️ 防御工具</h2>
+        <table class="tool-table">
+          <thead>
+            <tr>
+              <th>工具</th>
+              <th>类型</th>
+              <th>推荐</th>
+              <th>描述</th>
+              <th>适用场景</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Suricata</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>入侵检测引擎</td>
+              <td>实时监控</td>
+              <td><a href="https://suricata.io" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>Snort</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>入侵检测系统</td>
+              <td>网络监控</td>
+              <td><a href="https://www.snort.org" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>Wazuh</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>SIEM开源方案</td>
+              <td>统一监控</td>
+              <td><a href="https://wazuh.com" target="_blank">访问</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 逆向工程 -->
+      <section class="tools-section">
+        <h2>🖥️ 逆向工程</h2>
+        <table class="tool-table">
+          <thead>
+            <tr>
+              <th>工具</th>
+              <th>类型</th>
+              <th>推荐</th>
+              <th>描述</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ghidra</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>NSA开源逆向工具</td>
+              <td><a href="https://ghidra-sre.org" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>IDA Pro</td>
+              <td>💰</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>商业反汇编器</td>
+              <td><a href="https://www.hex-rays.com" target="_blank">访问</a></td>
+            </tr>
+            <tr>
+              <td>Radare2</td>
+              <td>🆓</td>
+              <td>⭐⭐⭐⭐</td>
+              <td>命令行逆向框架</td>
+              <td><a href="https://www.radare.org/n/" target="_blank">访问</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 使用建议 -->
+      <section class="suggestion-section">
+        <h2>📖 使用建议</h2>
+        
+        <div class="suggestion-card">
+          <h3>新手入门推荐</h3>
+          <ol>
+            <li><strong>Nmap</strong> - 网络扫描入门</li>
+            <li><strong>Burp Suite</strong> - Web安全入门</li>
+            <li><strong>Metasploit</strong> - 渗透框架学习</li>
+            <li><strong>Wireshark</strong> - 流量分析基础</li>
+          </ol>
+        </div>
+
+        <div class="suggestion-card">
+          <h3>红队常用组合</h3>
+          <ul>
+            <li>信息收集：Nmap + Maltego + Shodan</li>
+            <li>漏洞扫描：Nessus + OpenVAS</li>
+            <li>渗透测试：Metasploit + Cobalt Strike</li>
+          </ul>
+        </div>
+
+        <div class="suggestion-card">
+          <h3>蓝队常用组合</h3>
+          <ul>
+            <li>网络监控：Suricata + Snort</li>
+            <li>日志分析：OSSEC + Wazuh</li>
+            <li>取证分析：Autopsy + Velociraptor</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .hero { text-align: center; padding: 4rem; background: linear-gradient(135deg, #1a1a2e, #16213e); }
-  .hero h1 { color: #e74c3c; font-size: 2.5rem; }
+  .hero {
+    text-align: center;
+    padding: 4rem 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+  }
+
+  .hero h1 {
+    color: #e74c3c;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+  }
+
+  .legend {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #f39c12;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 40px 0;
+  }
+
+  .tools-section {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    color: #1a1a2e;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #e74c3c;
+  }
+
+  .tool-category {
+    margin-bottom: 30px;
+  }
+
+  .tool-category h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .tool-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .tool-table th, .tool-table td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+  }
+
+  .tool-table th {
+    background: #e74c3c;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .tool-table td:first-child {
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .tool-table tr:hover {
+    background: #f9f9f9;
+  }
+
+  .tool-table a {
+    color: #e74c3c;
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid #e74c3c;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  .tool-table a:hover {
+    background: #e74c3c;
+    color: #fff;
+  }
+
+  .suggestion-section {
+    margin-bottom: 50px;
+  }
+
+  .suggestion-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #e74c3c;
+  }
+
+  .suggestion-card h3 {
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .suggestion-card ol, .suggestion-card ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .suggestion-card li {
+    padding: 8px 0;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .tool-table {
+      font-size: 0.8rem;
+    }
+    
+    .tool-table th, .tool-table td {
+      padding: 8px 5px;
+    }
+  }
 </style>

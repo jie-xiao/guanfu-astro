@@ -172,6 +172,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </section>
 
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>❓ 常见问题</h2>
+        
+        <div class="faq-card">
+          <h3>Q：服务周期是多久？</h3>
+          <p>A：根据项目复杂度，基础服务1-2周，深度服务1-3个月。</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>Q：需要提供什么数据？</h3>
+          <p>A：财务报表、银行流水、合同台账等。</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>Q：交付形式是什么？</h3>
+          <p>A：PDF报告 + Excel数据 + PPT汇报（可选）。</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>Q：如何收费？</h3>
+          <p>A：按项目或年度顾问两种模式。</p>
+        </div>
+      </section>
+
       <!-- 财务工具推荐 -->
       <section class="tools-section">
         <h2>🛠️ 财务工具推荐</h2>
@@ -469,6 +494,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: rgba(255,255,255,0.7);
     margin-bottom: 20px;
   }
+
+  /* FAQ */
+  .faq-section { margin-bottom: 50px; }
+
+  .faq-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #27ae60;
+  }
+
+  .faq-card h3 {
+    color: #1a1a2e;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .faq-card p { color: #666; margin: 0; }
 
   .btn {
     display: inline-block;
