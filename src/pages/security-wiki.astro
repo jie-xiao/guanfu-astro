@@ -139,11 +139,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>CVE-2024-1709 - Screen Connect认证绕过</h3>
           <div class="cve-detail">
             <p><strong>漏洞类型：</strong>认证绕过</p>
-            <p><strong>影响版本：</strong>Screen Connect < 23.9.8</p>
-            <p><strong>危害等级：</strong>🔴 Critical</p>
-            <p><strong>漏洞描述：</strong>未经身份验证即可访问管理后台</p>
-            <p><strong>利用条件：</strong>无需认证，直接访问</p>
-            <p><strong>修复建议：</strong>升级到最新版本</p>
+            <p><strong>影响版本：</strong>ScreenConnect 23.9.7 及之前版本</p>
+            <p><strong>危害等级：</strong>🔴 Critical (CVSS 10.0)</p>
+            <p><strong>漏洞描述：</strong>身份验证绕过，可完全控制系统</p>
+            <p><strong>利用条件：</strong>无需认证</p>
+            <p><strong>修复建议：</strong>升级到 23.9.8 或更高版本</p>
+          </div>
+        </div>
+
+        <div class="cve-card critical">
+          <h3>CVE-2024-3400 - Palo Alto PAN-OS命令注入</h3>
+          <div class="cve-detail">
+            <p><strong>漏洞类型：</strong>命令注入</p>
+            <p><strong>影响版本：</strong>PAN-OS 10.2, 11.0, 11.1</p>
+            <p><strong>危害等级：</strong>🔴 Critical (CVSS 10.0)</p>
+            <p><strong>漏洞描述：</strong>GlobalProtect功能命令注入</p>
+            <p><strong>利用条件：</strong>需要GlobalProtect门户访问</p>
+            <p><strong>修复建议：</strong>升级到 PAN-OS 10.2.9, 11.0.3, 11.1.3</p>
           </div>
         </div>
       </section>
