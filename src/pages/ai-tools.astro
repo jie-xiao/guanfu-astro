@@ -494,3 +494,78 @@ function searchTools() {
   document.getElementById('resultCount').textContent = filter ? `${visibleCount} 个工具` : '';
 }
 </script>
+
+<!-- 工具对比表格 -->
+<section class="tools-section" style="margin-top:2rem">
+  <h2>📊 热门AI工具对比</h2>
+  <table class="tool-table" style="width:100%;border-collapse:collapse;margin:1rem 0">
+    <thead>
+      <tr style="background:#f8f9fa">
+        <th style="padding:12px;border:1px solid #eee">工具</th>
+        <th style="padding:12px;border:1px solid #eee">类型</th>
+        <th style="padding:12px;border:1px solid #eee">免费额度</th>
+        <th style="padding:12px;border:1px solid #eee">特长</th>
+        <th style="padding:12px;border:1px solid #eee">适合场景</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:12px;border:1px solid #eee">ChatGPT</td><td style="padding:12px;border:1px solid #eee">🔄 Freemium</td><td style="padding:12px;border:1px solid #eee">免费版有限</td><td style="padding:12px;border:1px solid #eee">通用能力强</td><td style="padding:12px;border:1px solid #eee">文案、编程、分析</td></tr>
+      <tr><td style="padding:12px;border:1px solid #eee">Claude</td><td style="padding:12px;border:1px solid #eee">🔄 Freemium</td><td style="padding:12px;border:1px solid #eee">免费版充足</td><td style="padding:12px;border:1px solid #eee">长文本分析</td><td style="padding:12px;border:1px solid #eee">代码审查、长文分析</td></tr>
+      <tr><td style="padding:12px;border:1px solid #eee">DeepSeek</td><td style="padding:12px;border:1px solid #eee">🆓 免费</td><td style="padding:12px;border:1px solid #eee">API便宜</td><td style="padding:12px;border:1px solid #eee">性价比高</td><td style="padding:12px;border:1px solid #eee">开发首选</td></tr>
+      <tr><td style="padding:12px;border:1px solid #eee">Midjourney</td><td style="padding:12px;border:1px solid #eee">💰 付费</td><td style="padding:12px;border:1px solid #eee">免费体验</td><td style="padding:12px;border:1px solid #eee">艺术风格强</td><td style="padding:12px;border:1px solid #eee">创意设计</td></tr>
+      <tr><td style="padding:12px;border:1px solid #eee">Stable Diffusion</td><td style="padding:12px;border:1px solid #eee">🆓 免费</td><td style="padding:12px;border:1px solid #eee">无限</td><td style="padding:12px;border:1px solid #eee">本地可部署</td><td style="padding:12px;border:1px solid #eee">定制化生成</td></tr>
+      <tr><td style="padding:12px;border:1px solid #eee">Suno</td><td style="padding:12px;border:1px solid #eee">🔄 Freemium</td><td style="padding:12px;border:1px solid #eee">免费有限</td><td style="padding:12px;border:1px solid #eee">音乐生成</td><td style="padding:12px;border:1px solid #eee">原创音乐</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 使用教程 -->
+<section class="tools-section" style="margin-top:2rem">
+  <h2>📚 AI工具使用教程</h2>
+  
+  <div class="tool-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem">
+    <div class="tool-card" style="background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)">
+      <h3 style="color:#d4af37;margin-bottom:0.5rem">🤖 ChatGPT新手入门</h3>
+      <p style="font-size:0.9rem;color:#666">从注册到熟练使用</p>
+      <ul style="font-size:0.85rem;color:#555;margin-top:0.5rem">
+        <li>1. 访问 chat.openai.com 注册</li>
+        <li>2. 选择 GPT-4 模型</li>
+        <li>3. 学会提问的技巧</li>
+        <li>4. 利用对话历史</li>
+      </ul>
+    </div>
+    
+    <div class="tool-card" style="background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)">
+      <h3 style="color:#d4af37;margin-bottom:0.5rem">🎨 Midjourney入门</h3>
+      <p style="font-size:0.9rem;color:#666">AI绘画快速上手</p>
+      <ul style="font-size:0.85rem;color:#555;margin-top:0.5rem">
+        <li>1. Discord 注册账号</li>
+        <li>2. 加入 Midjourney 服务器</li>
+        <li>3. 使用 /imagine 命令</li>
+        <li>4. 调整参数优化图片</li>
+      </ul>
+    </div>
+    
+    <div class="tool-card" style="background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)">
+      <h3 style="color:#d4af37;margin-bottom:0.5rem">💻 编程助手使用</h3>
+      <p style="font-size:0.9rem;color:#666">AI辅助编程</p>
+      <ul style="font-size:0.85rem;color:#555;margin-top:0.5rem">
+        <li>1. 选择合适的AI工具</li>
+        <li>2. 描述清楚需求</li>
+        <li>3. 理解并检查代码</li>
+        <li>4. 迭代优化</li>
+      </ul>
+    </div>
+    
+    <div class="tool-card" style="background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)">
+      <h3 style="color:#d4af37;margin-bottom:0.5rem">🎵 Suno音乐生成</h3>
+      <p style="font-size:0.9rem;color:#666">AI创作音乐</p>
+      <ul style="font-size:0.85rem;color:#555;margin-top:0.5rem">
+        <li>1. 访问 suno.ai 注册</li>
+        <li>2. 输入歌词或风格描述</li>
+        <li>3. 选择音乐风格</li>
+        <li>4. 生成并下载</li>
+      </ul>
+    </div>
+  </div>
+</section>
