@@ -8,6 +8,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>🛡️ 安全工具导航</h1>
       <p>为安全从业者精选工具</p>
       <p class="legend">🆓免费 | 💰付费 | 🔄freemium | 更新：2026-03</p>
+      
+      <!-- 搜索框 -->
+      <div style="margin-top:1.5rem">
+        <input type="text" id="searchInput" placeholder="🔍 搜索安全工具..." 
+          style="padding:10px 15px;width:300px;border-radius:20px;border:1px solid #d4af37;background:#1a1a2e;color:#fff;font-size:14px"
+          onkeyup="searchTools()">
+        <span id="resultCount" style="margin-left:10px;color:#d4af37;font-size:14px"></span>
+      </div>
     </div>
   </section>
 
@@ -517,3 +525,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .combo-table td { padding: 10px; border-bottom: 1px solid #eee; }
   .combo-table td:first-child { font-weight: 500; }
 </style>
+
+<script>
+function searchTools() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  const cards = document.querySelectorAll('.tool-card, .combo-card, .section');
+  let visibleCount = 0;
+  
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(filter)) {
+      card.style.display = '';
+      visibleCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  
+  document.getElementById('resultCount').textContent = filter ? `${visibleCount} 个结果` : '';
+}
+</script>

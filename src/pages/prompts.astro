@@ -8,6 +8,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>💬 提示词库</h1>
       <p>优质提示词模板 · 实用案例 · 高级技巧 · 避坑指南</p>
       <p class="subtitle">从入门到进阶，从技巧到实战——这里有你需要的一切！</p>
+      
+      <!-- 搜索框 -->
+      <div style="margin-top:1.5rem">
+        <input type="text" id="searchInput" placeholder="🔍 搜索提示词..." 
+          style="padding:10px 15px;width:300px;border-radius:20px;border:1px solid #d4af37;background:#1a1a2e;color:#fff;font-size:14px"
+          onkeyup="searchPrompts()">
+        <span id="resultCount" style="margin-left:10px;color:#d4af37;font-size:14px"></span>
+      </div>
     </div>
   </section>
 
@@ -864,3 +872,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-top: 10px;
   }
 </style>
+
+<script>
+function searchPrompts() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  
+  // 搜索section标题
+  const sections = document.querySelectorAll('.section, .why-section, .quick-nav, .trends-section');
+  let visibleSections = 0;
+  
+  sections.forEach(section => {
+    const text = section.textContent.toLowerCase();
+    if (filter === '' || text.includes(filter)) {
+      section.style.display = '';
+      visibleSections++;
+    } else {
+      section.style.display = 'none';
+    }
+  });
+  
+  document.getElementById('resultCount').textContent = filter ? `${visibleSections} 个板块` : '';
+}
+</script>
