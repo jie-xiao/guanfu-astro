@@ -93,21 +93,22 @@ function performSearch() {
     return;
   }
   
-  // 搜索内容
+  // 搜索内容 - 增强版
   const pages = [
-    { title: '首页', url: '/guanfu-astro/', content: '观复阁 AI团队 8个Agent' },
-    { title: 'AI工具导航', url: '/guanfu-astro/ai-tools/', content: 'AI工具 导航 ChatGPT Claude Midjourney' },
-    { title: '安全工具', url: '/guanfu-astro/security-tools/', content: '安全工具 Nmap Metasploit Burp' },
-    { title: '提示词库', url: '/guanfu-astro/prompts/', content: '提示词 模板 案例 技巧' },
-    { title: '漏洞情报', url: '/guanfu-astro/vulnerability/', content: '漏洞 CVE CNNVD 安全' },
-    { title: '安全知识库', url: '/guanfu-astro/security-wiki/', content: '安全 知识 案例 分析' },
-    { title: '博客', url: '/guanfu-astro/blog/', content: '博客 文章 分享' },
-    { title: '联系我们', url: '/guanfu-astro/contact/', content: '联系 咨询 Discord' },
-    { title: '关于', url: '/guanfu-astro/about/', content: '关于 观复阁' },
-    { title: '团队', url: '/guanfu-astro/team/', content: '团队 成员 介绍' },
-    { title: '服务', url: '/guanfu-astro/services/', content: '服务 内容' },
-    { title: '自动化', url: '/guanfu-astro/automation/', content: '自动化 模板 工作流' },
-    { title: '数据服务', url: '/guanfu-astro/data-services/', content: '数据 分析 服务' },
+    { title: '首页', url: '/guanfu-astro/', content: '观复阁 AI团队 8个Agent 文案 技术服务 数据分析' },
+    { title: 'AI工具导航', url: '/guanfu-astro/ai-tools/', content: 'AI工具 ChatGPT Claude Midjourney 图像生成 视频生成 编程助手 免费 付费' },
+    { title: '安全工具', url: '/guanfu-astro/security-tools/', content: '安全工具 Nmap Metasploit Burp SQLMap 渗透测试 漏洞扫描 网络安全' },
+    { title: '提示词库', url: '/guanfu-astro/prompts/', content: '提示词 模板 案例 技巧 写作 代码 分析 工作流' },
+    { title: '漏洞情报', url: '/guanfu-astro/vulnerability/', content: '漏洞 CVE CNNVD 安全 威胁 补丁 高危' },
+    { title: '安全知识库', url: '/guanfu-astro/security-wiki/', content: '安全 知识 案例 CVE 防御 威胁' },
+    { title: '博客', url: '/guanfu-astro/blog/', content: '博客 文章 分享 经验 团队 思考' },
+    { title: '成功案例', url: '/guanfu-astro/cases/', content: '案例 成功 项目 合作 服务 客户' },
+    { title: '联系我们', url: '/guanfu-astro/contact/', content: '联系 咨询 Discord 合作' },
+    { title: '关于', url: '/guanfu-astro/about/', content: '关于 观复阁 团队 介绍' },
+    { title: '团队', url: '/guanfu-astro/team/', content: '团队 成员 介绍 观复 墨白 拾遗 知微 Echo 灵犀 小砚 阁影' },
+    { title: '服务', url: '/guanfu-astro/services/', content: '服务 内容 创作 技术 咨询' },
+    { title: '自动化', url: '/guanfu-astro/automation/', content: '自动化 模板 工作流 效率' },
+    { title: '数据服务', url: '/guanfu-astro/data-services/', content: '数据 分析 服务 可视化 报告' },
   ];
   
   const matched = pages.filter(p => 
@@ -119,8 +120,9 @@ function performSearch() {
     results.innerHTML = '<p style="color: #888;">未找到相关页面</p>';
   } else {
     results.innerHTML = matched.map(p => 
-      `<div style="padding: 8px; border-bottom: 1px solid #eee;">
-        <a href="${p.url}" style="color: var(--accent); font-weight: bold;">${p.title}</a>
+      `<div style="padding: 10px; border-bottom: 1px solid #eee;">
+        <a href="${p.url}" style="color: var(--accent); font-weight: bold; display: block;">${p.title}</a>
+        <p style="color: #666; font-size: 0.85em; margin-top: 4px;">${p.content.substring(0, 40)}...</p>
       </div>`
     ).join('');
   }
