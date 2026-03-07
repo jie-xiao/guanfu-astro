@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI工具导航 - 观复阁" description="观复阁AI工具导航 - 收录各类AI工具">
+  <div class="hero">
+    <h1>🤖 AI工具导航</h1>
+    <p>收录各类AI工具，分类清晰，快速查找，定期更新</p>
+    <p style="margin-top:1rem;font-size:0.9rem;opacity:0.7">收录60+款AI工具</p>
+    <div style="margin-top:1.5rem">
+      <input type="text" id="searchBox" placeholder="🔍 搜索AI工具..." 
+             style="padding:0.8rem 1.5rem;width:300px;border-radius:25px;border:none;font-size:1rem;background:rgba(255,255,255,0.9);color:#333"
+             onkeyup="searchTools()">
+    </div>
+  </div>
+
+  <script>
+    function searchTools() {
+      const input = document.getElementById('searchBox');
+      const filter = input.value.toUpperCase();
+      const sections = document.getElementsByClassName('tools-section');
+      for (let i = 0; i < sections.length; i++) {
+        const cards = sections[i].getElementsByClassName('tool-card');
+        let hasVisible = false;
+        for (let j = 0; j < cards.length; j++) {
+          const h3 = cards[j].getElementsByTagName('h3')[0];
+          const p = cards[j].getElementsByTagName('p')[0];
+          if (h3 || p) {
+            const text = (h3 ? h3.textContent : '') + ' ' + (p ? p.textContent : '');
+            if (text.toUpperCase().indexOf(filter) > -1) {
+              cards[j].style.display = '';
+              hasVisible = true;
+            } else {
+              cards[j].style.display = 'none';
+            }
+          }
+        }
+        sections[i].style.display = hasVisible ? '' : 'none';
+      }
+    }
+  </script>
+
+  <div class="content">
+    <nav class="quick-nav">
+      <a href="#ai-chat">📝 AI对话</a>
+      <a href="#ai-image">🖼️ 图像</a>
+      <a href="#ai-code">💻 代码</a>
+      <a href="#ai-video">🎬 视频</a>
+      <a href="#ai-audio">🎵 音频</a>
+      <a href="#ai-search">🔍 搜索</a>
+      <a href="#ai-office">📊 办公</a>
+    </nav>
+    
+    <section class="tools-section" id="ai-chat">
+      <h2>📝 AI对话</h2>
+      <p class="section-desc">主流AI对话模型</p>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>ChatGPT</h3>
+          <p>OpenAI推出的对话AI，GPT-4模型能力强大</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://chat.openai.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Claude</h3>
+          <p>Anthropic推出的AI助手，长文本处理能力强</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://claude.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>DeepSeek</h3>
+          <p>国产大模型，性价比高</p>
+          <span class="tag">对话</span>
+          <span class="tag-free">🆓</span>
+          <a href="https://www.deepseek.com" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section" id="ai-image">
+      <h2>🖼️ AI图像</h2>
+      <p class="section-desc">AI图像生成工具</p>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Midjourney</h3>
+          <p>最强AI绘画工具，艺术风格强大</p>
+          <span class="tag">图像</span>
+          <span class="tag-free">💰</span>
+          <a href="https://www.midjourney.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Stable Diffusion</h3>
+          <p>开源AI绘画，本地可部署</p>
+          <span class="tag">图像</span>
+          <span class="tag-free">🆓</span>
+          <a href="https://stability.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>DALL-E</h3>
+          <p>OpenAI图像生成</p>
+          <span class="tag">图像</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://openai.com/dall-e-3" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section" id="ai-code">
+      <h2>💻 AI编程</h2>
+      <p class="section-desc">AI代码辅助工具</p>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>GitHub Copilot</h3>
+          <p>代码补全，实时建议</p>
+          <span class="tag">编程</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://github.com/features/copilot" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Cursor</h3>
+          <p>AI代码编辑器</p>
+          <span class="tag">编程</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://cursor.sh" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Windsurf</h3>
+          <p>新一代AI编程工具</p>
+          <span class="tag">编程</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://windsurf.ai" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section" id="ai-video">
+      <h2>🎬 AI视频</h2>
+      <p class="section-desc">AI视频生成工具</p>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Suno</h3>
+          <p>AI音乐和音频生成</p>
+          <span class="tag">音频</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://suno.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Runway</h3>
+          <p>AI视频生成和编辑</p>
+          <span class="tag">视频</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://runwayml.com" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Pika</h3>
+          <p>AI视频生成</p>
+          <span class="tag">视频</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://pika.art" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section" id="ai-search">
+      <h2>🔍 AI搜索</h2>
+      <p class="section-desc">AI增强搜索引擎</p>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Perplexity</h3>
+          <p>AI搜索答案引擎</p>
+          <span class="tag">搜索</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://www.perplexity.ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Kimi</h3>
+          <p>国产AI搜索助手</p>
+          <span class="tag">搜索</span>
+          <span class="tag-free">🆓</span>
+          <a href="https://kimi.moonshot.cn" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section" id="ai-office">
+      <h2>📊 AI办公</h2>
+      <p class="section-desc">AI办公辅助工具</p>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h3>Notion AI</h3>
+          <p>笔记和文档AI助手</p>
+          <span class="tag">办公</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://notion.so/product/ai" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>WPS AI</h3>
+          <p>WPS办公AI助手</p>
+          <span class="tag">办公</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://ai.wps.cn" target="_blank" class="link">访问</a>
+        </div>
+        <div class="tool-card">
+          <h3>Copilot</h3>
+          <p>Microsoft 365 AI助手</p>
+          <span class="tag">办公</span>
+          <span class="tag-free">🔄</span>
+          <a href="https://copilot.microsoft.com" target="_blank" class="link">访问</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero { text-align: center; padding: 4rem 20px; background: linear-gradient(135deg, #1a1a2e, #16213e); }
+  .hero h1 { color: #d4af37; font-size: 2.5rem; margin-bottom: 10px; }
+  .hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; }
+  .content { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+  .quick-nav { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 40px; }
+  .quick-nav a { padding: 10px 20px; background: #f5f5f5; border-radius: 20px; color: #333; text-decoration: none; transition: all 0.3s; }
+  .quick-nav a:hover { background: #d4af37; color: white; }
+  .tools-section { margin: 40px 0; }
+  .tools-section h2 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; margin-bottom: 20px; }
+  .section-desc { color: #666; margin-bottom: 20px; }
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .tool-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+  .tool-card h3 { color: #1a1a2e; margin-bottom: 10px; }
+  .tool-card p { color: #666; font-size: 0.9rem; margin-bottom: 10px; }
+  .tag { display: inline-block; background: #e0e0e0; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; margin-right: 5px; }
+  .tag-free { font-size: 0.8rem; }
+  .link { display: inline-block; margin-top: 10px; color: #d4af37; text-decoration: none; }
+  .link:hover { text-decoration: underline; }
+</style>
