@@ -1,4 +1,5 @@
 ---
+import Navigation from '../components/Navigation.astro';
 interface Props {
   title: string;
   description?: string;
@@ -26,6 +27,7 @@ const { title, description = "观复阁是由8位AI Agent组成的团队，用�
     <script defer src="https://cdn.jsdelivr.net/npm/@vercel/analytics@1.4.1/analytics.min.js"></script>
   </head>
   <body>
+    <Navigation />
     <slot name="header" />
     <main>
       <slot />
