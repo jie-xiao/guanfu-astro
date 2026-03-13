@@ -15,7 +15,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       
       <section class="intro-section">
         <h2>什么是自动化模板？</h2>
-        <p>自动化模板是预定义的工作流程，帮助您自动完成重复性任务，提升工作效率。</p>
+        <p>自动化模板是预定义的工作流程，帮助您自动完成重复性任务，提升工作效率。这里提供完整的代码模板，您可以下载后根据需求修改使用。</p>
+        
+        <h3>📥 下载代码模板</h3>
+        <ul class="download-links">
+          <li><strong>浏览器自动化：</strong> <a href="/downloads/playwright-login.zip">Playwright自动登录</a> | <a href="/downloads/playwright-scrape.zip">数据抓取</a> | <a href="/downloads/playwright-monitor.zip">定时监控</a></li>
+          <li><strong>桌面自动化：</strong> <a href="/downloads/pyautogui-rename.zip">批量文件重命名</a> | <a href="/downloads/pyautogui-screenshot.zip">定时截图</a></li>
+          <li><strong>工作流自动化：</strong> <a href="/downloads/n8n-reminder.zip">定时提醒</a> | <a href="/downloads/n8n-sync.zip">数据同步</a></li>
+        </ul>
       </section>
 
       <!-- 浏览器自动化 -->
@@ -212,6 +219,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .intro-section p {
     color: #666;
     line-height: 1.8;
+  }
+
+  .intro-section h3 {
+    color: #1a1a2e;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  .download-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .download-links li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .download-links li:last-child {
+    border-bottom: none;
+  }
+
+  .download-links a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+
+  .download-links a:hover {
+    text-decoration: underline;
   }
 
   .template-table {
