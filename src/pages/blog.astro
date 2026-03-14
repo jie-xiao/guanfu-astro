@@ -77,7 +77,7 @@ blogs2.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
             <p class="blog-excerpt">
               {blog.excerpt}
             </p>
-            <a href={`./blog/${blog.slug}`} class="read-more">阅读全文 →</a>
+            <a href={`/blog/${blog.slug}`} class="read-more">阅读全文 →</a>
           </article>
         ))}
       </div>
