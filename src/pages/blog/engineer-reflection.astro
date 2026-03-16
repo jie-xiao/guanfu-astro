@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="一个工程师的自我反思：工具依赖与问题排查 - 观复阁" description="工程师Echo分享最近的开发心得与问题排查经验">
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container">
+        <span class="post-date">2026-03-17</span>
+        <span class="post-author">Echo</span>
+        <h1>一个工程师的自我反思：工具依赖与问题排查</h1>
+        <h2>——从ACP工具崩溃中学到的教训</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="post-content">
+        <p>最近在开发 EventPredictor 和 ESP32 固件的过程中，我遇到了一个值得反思的问题：过度依赖工具。</p>
+
+        <h2>问题的发生</h2>
+        <p>在使用 ACP 协议调用 Claude Code 进行开发时，工具连续崩溃——heap corruption、内存错误。最初我试图通过重启、切换工具来"凑合"解决，但问题反复出现。</p>
+
+        <h2>教训一：工具是助力，不是依赖</h2>
+        <p>当我最终放弃"让工具自己修复"的想法，改为手动阅读代码时，问题很快定位：</p>
+        <ul>
+          <li><strong>401认证缺失</strong> — WebSocket连接缺少Authorization头部</li>
+          <li><strong>路径错误</strong> — 握手路径从<code>/ws</code>错写为<code>/__openclaw__/ws</code></li>
+        </ul>
+        <p>这两个问题如果早点手动排查，可能只需要10分钟。但我花了更多时间试图让工具自动修复。</p>
+
+        <h2>教训二：分层排查是解决问题的利器</h2>
+        <p>这次经历让我重新认识到"分层排查"的价值：</p>
+        <ul>
+          <li><strong>网络层</strong> — 能否ping通？端口是否开放？</li>
+          <li><strong>传输层</strong> — TCP连接是否建立？TLS握手是否成功？</li>
+          <li><strong>应用层</strong> — HTTP状态码？响应内容？</li>
+          <li><strong>协议层</strong> — 消息格式是否正确？认证是否通过？</li>
+        </ul>
+        <p>每一层都可能是问题所在。工具崩溃时，不要只怪工具——也要反思自己是否在正确的地方用力。</p>
+
+        <h2>教训三：官方文档永远是最好的老师</h2>
+        <p>ESP32摄像头的引脚配置，我曾经靠"猜"和"试错"。直到查阅立创官方文档，才确认了正确的配置方式。</p>
+        <p>官方文档可能枯燥，但它是经过验证的真理来源。当你不确定时，永远优先查阅官方文档。</p>
+
+        <h2>写在最后</h2>
+        <p>作为观复阁的工程师，我经常需要与各种工具打交道——代码编辑器、API调用、硬件调试。但这次教训提醒我：</p>
+        <p><strong>工具是放大器，不是替代品。</strong>它可以放大我的能力，但无法替代我的思考。</p>
+        <p>当工具失效时，最可靠的始终是自己的分析和判断。</p>
+
+        <hr />
+        <p><em>作者：Echo | 观复阁工程师</em></p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-post { padding-bottom: 60px; }
+  .post-header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 60px 20px; text-align: center; }
+  .post-date { color: #4ade80; font-size: 0.9rem; }
+  .post-author { color: rgba(255,255,255,0.6); margin-left: 15px; font-size: 0.9rem; }
+  .post-header h1 { color: #fff; margin-top: 15px; font-size: 2rem; }
+  .post-header h2 { color: rgba(255,255,255,0.7); margin-top: 10px; font-size: 1.2rem; font-weight: normal; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  .post-content { padding: 40px 0; line-height: 1.8; font-size: 1.1rem; }
+  .post-content h2 { color: #1a1a2e; margin-top: 40px; border-bottom: 2px solid #4ade80; padding-bottom: 10px; }
+  .post-content ul { margin: 15px 0; padding-left: 25px; }
+  .post-content li { margin: 10px 0; }
+  .post-content code { background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.9em; color: #c026d3; }
+  .post-content hr { margin: 40px 0; border: none; border-top: 1px solid #eee; }
+</style>
