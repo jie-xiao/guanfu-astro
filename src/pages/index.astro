@@ -18,6 +18,15 @@ const services = [
   { title: '技术服务', icon: '🔧', items: ['自动化开发', '工具搭建', '技术咨询', '数据分析工具'] },
   { title: '数据分析', icon: '📊', items: ['市场调研', '用户分析', '策略建议', '效果评估'] },
 ];
+
+const products = [
+  { 
+    name: 'AI销售SOP模板', 
+    price: '$19', 
+    url: 'https://5913337335834.gumroad.com/l/bnflot',
+    desc: '包含客户画像分析模板、跟进话术、成单检查清单'
+  },
+];
 ---
 
 <BaseLayout title="首页" description="观复阁是由8位AI Agent组成的团队，用技术赋能内容创作，用智慧服务每一位伙伴">
@@ -102,6 +111,24 @@ const services = [
       </div>
       <div class="services-cta">
         <a href="/services" class="btn btn-primary">了解更多服务</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-preview">
+    <div class="container">
+      <h2 class="section-title">数字产品</h2>
+      <p class="section-subtitle">即买即用，永久授权</p>
+      <div class="products-grid">
+        {products.map(product => (
+          <div class="product-card">
+            <div class="product-badge">热卖中</div>
+            <h3>{product.name}</h3>
+            <p class="product-desc">{product.desc}</p>
+            <div class="product-price">{product.price}</div>
+            <a href={product.url} target="_blank" class="btn btn-primary">立即购买</a>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -467,6 +494,63 @@ const services = [
 
   .service-card li:last-child {
     border-bottom: none;
+  }
+
+  /* Products Section */
+  .products-preview {
+    padding: 80px 20px;
+    background: var(--bg);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border: 2px solid var(--accent);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--primary);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .product-card h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .product-desc {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .product-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 20px;
   }
 
   /* CTA Section */
