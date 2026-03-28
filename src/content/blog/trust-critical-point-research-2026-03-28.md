@@ -105,6 +105,20 @@ class TrustAgent(Agent):
 
 **代码路径：** `projects/trust-critical-point/mesa_simulation.py`
 
+### 仿真可视化
+
+![Mesa仿真结果](/images/mesa-results.png)
+
+**图表说明：**
+- 左图：不同网络规模下的T_loss变化，complete网络表现最优
+- 右图：不同信任分布下的T_loss，高信任分布T_loss更低
+
+**仿真结论：**
+1. 完全图（complete）网络T_loss最低，协作效率最优
+2. 星形（star）网络T_loss最高，中心节点成为瓶颈
+3. 信任拐点分布在3-8之间，与网络拓扑相关
+4. 网络规模增大时，T_loss呈下降趋势（完全图）
+
 ---
 
 ## Shannon熵框架（拾遗 负责）
