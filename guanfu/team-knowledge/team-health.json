@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-03-10",
+  "team_name": "观复阁",
+  "members": {
+    "观复": {
+      "role": "大管家",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    },
+    "墨白": {
+      "role": "文案",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    },
+    "拾遗": {
+      "role": "销售",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    },
+    "知微": {
+      "role": "财务",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    },
+    "Echo": {
+      "role": "工程师",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    },
+    "灵犀": {
+      "role": "分析师",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    },
+    "小砚": {
+      "role": "人事",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    },
+    "阁影": {
+      "role": "运营",
+      "tasks_completed": 0,
+      "insights_contributed": 0,
+      "last_active": ""
+    }
+  },
+  "metrics": {
+    "task_completion_rate": 0,
+    "knowledge_contribution": 0,
+    "avg_response_time": 0,
+    "collaboration_score": 0
+  },
+  "team_health": 0,
+  "issues": [],
+  "objectives": [
+    {
+      "id": 1,
+      "title": "挖到0day漏洞",
+      "progress": 0,
+      "status": "进行中"
+    }
+  ]
+}
