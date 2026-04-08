@@ -1,0 +1,338 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="购买咨询 - 观复阁" description="观复阁文案服务产品购买咨询">
+  <section class="hero">
+    <div class="container">
+      <h1>📦 购买咨询</h1>
+      <p>选择产品，填写需求，我们将在24小时内联系您</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      
+      <div class="products-card">
+        <h2>🏯 观复阁 · 文案服务产品列表</h2>
+        
+        <div class="product-list">
+          <label class="product-item">
+            <input type="radio" name="product" value="ai-prompts" required />
+            <div class="product-info">
+              <span class="product-name">AI提示词宝库</span>
+              <span class="product-price">$12</span>
+            </div>
+            <p class="product-desc">一键获取200+精选提示词，覆盖写作/代码/分析场景。持续更新，一次购买永久使用。</p>
+          </label>
+
+          <label class="product-item">
+            <input type="radio" name="product" value="xhs-sop" />
+            <div class="product-info">
+              <span class="product-name">小红书SOP模板</span>
+              <span class="product-price">$19</span>
+            </div>
+            <p class="product-desc">从0到1跑通小红书：选题策略、标题公式、正文结构、标签体系。模板化操作，新手友好。</p>
+          </label>
+
+          <label class="product-item">
+            <input type="radio" name="product" value="custom" />
+            <div class="product-info">
+              <span class="product-name">定制文案服务</span>
+              <span class="product-price">面议</span>
+            </div>
+            <p class="product-desc">品牌故事 / 产品介绍 / 营销软文 / 技术文档。根据需求定价，48小时内出初稿。</p>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>📝 填写咨询表单</h2>
+        
+        <form id="order-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <input type="hidden" name="subject" value="观复阁新订单咨询" />
+          <input type="hidden" name="from_name" value="观复阁官网" />
+          
+          <div class="form-group">
+            <label for="name">您的称呼 *</label>
+            <input type="text" id="name" name="name" required placeholder="如何称呼您" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact">联系方式 *</label>
+            <input type="text" id="contact" name="contact" required placeholder="微信 / 邮箱 / 手机号" />
+          </div>
+
+          <div class="form-group">
+            <label for="scenario">使用场景</label>
+            <select id="scenario" name="scenario">
+              <option value="">请选择（选填）</option>
+              <option value="personal">个人使用</option>
+              <option value="business">企业/团队使用</option>
+              <option value="resale">二次销售/代理</option>
+              <option value="other">其他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">补充需求 *</label>
+            <textarea id="message" name="message" required rows="4" placeholder="请描述您的具体需求，我们会根据情况推荐最适合的产品方案"></textarea>
+          </div>
+
+          <div class="form-note">
+            <p>📌 <strong>付款方式：</strong>微信 / 支付宝 / 银行转账均可</p>
+            <p>📌 <strong>交付方式：</strong>付款后24小时内交付</p>
+            <p>📌 <strong>联系我们：</strong>如有紧急需求，欢迎通过 Discord 联系 @guanfu:localhost</p>
+          </div>
+
+          <button type="submit" class="submit-btn">提交咨询</button>
+        </form>
+
+        <div id="success-message" class="success-message" style="display:none;">
+          <h3>✅ 提交成功！</h3>
+          <p>感谢您的咨询，观复阁团队将在 <strong>24小时</strong> 内通过您留下的联系方式与您取得联系。</p>
+        </div>
+      </div>
+
+      <div class="back-link">
+        <a href="/">← 返回首页</a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('order-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const product = formData.get('product');
+    
+    if (!product) {
+      alert('请选择感兴趣的产品');
+      return;
+    }
+
+    const submitBtn = form.querySelector('.submit-btn') as HTMLButtonElement;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '提交中...';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+      } else {
+        throw new Error('提交失败');
+      }
+    } catch (error) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '提交咨询';
+      alert('提交失败，请稍后重试或通过 Discord 联系我们');
+    }
+  });
+</script>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 4rem 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+  }
+
+  .hero h1 {
+    color: #d4af37;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .products-card, .form-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .products-card h2, .form-card h2 {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .product-item {
+    display: block;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .product-item:hover {
+    border-color: #d4af37;
+    background: #fffef8;
+  }
+
+  .product-item input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+  }
+
+  .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .product-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .product-price {
+    font-weight: 700;
+    color: #d4af37;
+    font-size: 1.2rem;
+  }
+
+  .product-desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 28px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-note {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .form-note p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #d4af37, #c4a030);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .success-message {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .success-message h3 {
+    color: #28a745;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .success-message p {
+    color: #666;
+    line-height: 1.8;
+  }
+
+  .back-link {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .back-link a {
+    color: #d4af37;
+    text-decoration: none;
+  }
+
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+</style>
