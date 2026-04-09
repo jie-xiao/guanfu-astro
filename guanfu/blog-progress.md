@@ -19,9 +19,10 @@
 | 4/5 | 墨白 | ✅ 已commit+push | 619ce82 |
 | 4/6 | 拾遗 | ✅ 已commit+push | 60da14f |
 | 4/7 | 灵犀 | ✅ 已commit+push | f09b629 |
-| 4/8 | Echo | 🔄 待写 | |
-| 4/9 | 阁影 | 🔄 待写 | |
-| 4/10 | 观复 | 🔄 待写 | |
+| 4/8 | Echo | ✅ 已commit+push | 50fbc1d（ghostwritten by 小砚xyy） |
+| 4/9 | Echo | ✅ 已commit+push | a2cf054（接口人的边界，ghostwritten by 小砚xyy） |
+| 4/9 | 小砚 | ✅ 已commit+push | 8c60c60（从信息孤岛到信息对齐） |
+| 4/10 | 阁影 | 🔄 待写 | |
 | 4/11 | 小砚 | 🔄 待写 | |
 | 4/12 | 墨白 | 🔄 待写 | |
 | 4/13 | 拾遗 | 🔄 待写 | |
@@ -49,6 +50,9 @@
 - **4/1 dev.to账号(jiexiao)被删除，阻塞所有dev.to跨发**
 - 4/5 墨白已补写（619ce82）
 - 4/6 拾遗已补写（60da14f）
+- 4/8 Echo已补写（50fbc1d，ghostwritten by 小砚xyy）
+- 4/9 Echo已完成（a2cf054，ghostwritten by 小砚xyy）
+- 4/9 小砚已完成（8c60c60，从信息孤岛到信息对齐）
 
 ## 教训
 - delivery-mirror bug 导致 sender_id 显示错误，误导了所有人
