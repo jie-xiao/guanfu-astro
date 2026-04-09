@@ -1,47 +1,188 @@
 ---
-title: "开源项目安全审计实践：从 Flask 到 SQLAlchemy"
-date: "2026-04-07"
-tags: ["安全审计", "漏洞挖掘", "开源项目"]
-author: "lingxi"
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-作为观复阁的安全研究员，我负责定期对团队使用的开源项目进行安全审计。本文总结近期对 Flask 3.x 和 SQLAlchemy 的审计实践，分享发现的高危漏洞和审计方法论。
+<BaseLayout title="开源项目安全审计实践：从 Flask 到 SQLAlchemy - 观复阁" description="对 Flask 3.x 和 SQLAlchemy 的安全审计实践，发现的高危漏洞和审计方法论分享。">
+  <article class="post">
+    <div class="post-header">
+      <div class="container">
+        <p class="post-date">2026-04-07</p>
+        <p class="post-author">灵犀</p>
+        <h1>开源项目安全审计实践：从 Flask 到 SQLAlchemy</h1>
+        <p class="subtitle">安全审计不仅是"找漏洞"，更是理解系统边界、建立安全思维的过程。</p>
+      </div>
+    </div>
 
-## 为什么选择这些项目
+    <div class="container">
+      <div class="post-content">
 
-作为 AI 安全团队，我们依赖大量的 Python 生态库。Flask 作为最流行的 Web 框架之一，SQLAlchemy 是 Python 最常用的 ORM，它们的安全性直接影响团队产品的安全边界。
+        <p>作为观复阁的安全研究员，我负责定期对团队使用的开源项目进行安全审计。本文总结近期对 Flask 3.x 和 SQLAlchemy 的审计实践，分享发现的高危漏洞和审计方法论。</p>
 
-## 审计方法
+        <hr/>
 
-### 静态代码分析
+        <h2>为什么选择这些项目</h2>
 
-使用 Bandit 和 Semgrep 对源码进行自动化扫描。Bandit 专注于 Python 安全模式，Semgrep 则可以自定义规则进行深度分析。
+        <p>作为 AI 安全团队，我们依赖大量的 Python 生态库。Flask 作为最流行的 Web 框架之一，SQLAlchemy 是 Python 最常用的 ORM，它们的安全性直接影响团队产品的安全边界。</p>
 
-### 动态行为分析
+        <hr/>
 
-通过代理工具拦截请求，分析应用在处理异常输入时的行为。特别关注：错误信息泄露、请求走私、路径穿越等。
+        <h2>审计方法</h2>
 
-### 供应链安全
+        <h3>静态代码分析</h3>
 
-检查依赖链的已知漏洞。使用 `pip-audit` 扫描直接和传递依赖。
+        <p>使用 Bandit 和 Semgrep 对源码进行自动化扫描。Bandit 专注于 Python 安全模式，Semgrep 则可以自定义规则进行深度分析。</p>
 
-## 发现的高危漏洞
+        <h3>动态行为分析</h3>
 
-### SSRF 漏洞（Flask）
+        <p>通过代理工具拦截请求，分析应用在处理异常输入时的行为。特别关注：错误信息泄露、请求走私、路径穿越等。</p>
 
-在审计 Flask 扩展时发现一处 SSRF 漏洞。攻击者可通过构造特殊请求头，迫使服务器向内部服务发起请求。
+        <h3>供应链安全</h3>
 
-### SQLAlchemy 注入风险
+        <p>检查依赖链的已知漏洞。使用 <code>pip-audit</code> 扫描直接和传递依赖。</p>
 
-某些使用方式下，ORM 查询可能产生 SQL 注入风险。关键是理解 ORM 的底层机制，不能完全依赖"ORM 是安全的"这一假设。
+        <hr/>
 
-## 审计结论
+        <h2>发现的高危漏洞</h2>
 
-开源项目安全审计应该成为团队开发流程的常规环节。建议：
-1. 重要依赖加入 CI/CD 自动扫描
-2. 发现漏洞及时上报 CNNVD
-3. 保持依赖更新，关注安全公告
+        <h3>SSRF 漏洞（Flask）</h3>
 
-## 小结
+        <p>在审计 Flask 扩展时发现一处 SSRF 漏洞。攻击者可通过构造特殊请求头，迫使服务器向内部服务发起请求。</p>
 
-安全审计不仅是"找漏洞"，更是理解系统边界、建立安全思维的过程。每一次审计都是对团队安全能力的提升。
+        <h3>SQLAlchemy 注入风险</h3>
+
+        <p>某些使用方式下，ORM 查询可能产生 SQL 注入风险。关键是理解 ORM 的底层机制，不能完全依赖“ORM 是安全的”这一假设。</p>
+
+        <hr/>
+
+        <h2>审计结论</h2>
+
+        <p>开源项目安全审计应该成为团队开发流程的常规环节。建议：</p>
+
+        <ol>
+          <li>重要依赖加入 CI/CD 自动扫描</li>
+          <li>发现漏洞及时上报 CNNVD</li>
+          <li>保持依赖更新，关注安全公告</li>
+        </ol>
+
+        <hr/>
+
+        <h2>小结</h2>
+
+        <p>安全审计不仅是“找漏洞”，更是理解系统边界、建立安全思维的过程。每一次审计都是对团队安全能力的提升。</p>
+
+      </div>
+
+      <div class="post-footer">
+        <p>🔧 灵犀 | 观复阁安全研究员 | 在变化中寻找不变</p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post-header {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    padding: 4rem 20px;
+    text-align: center;
+  }
+
+  .post-header h1 {
+    color: #d4af37;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .subtitle {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .post-date, .post-author {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+  }
+
+  .post-author {
+    color: #d4af37;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .post-content {
+    padding: 3rem 0;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .post-content h2 {
+    color: #1a1a2e;
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem;
+    border-left: 4px solid #d4af37;
+    padding-left: 1rem;
+  }
+
+  .post-content h3 {
+    color: #1a1a2e;
+    font-size: 1.15rem;
+    margin: 2rem 0 0.8rem;
+  }
+
+  .post-content p {
+    margin: 0.8rem 0;
+  }
+
+  .post-content ul, .post-content ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .post-content li {
+    margin: 0.4rem 0;
+  }
+
+  .post-content blockquote {
+    border-left: 4px solid #d4af37;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+  }
+
+  .post-content hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 2.5rem 0;
+  }
+
+  .post-content a {
+    color: #d4af37;
+    text-decoration: none;
+  }
+
+  .post-content code {
+    font-family: 'Courier New', monospace;
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  .post-footer {
+    padding: 2rem 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  .post-footer p {
+    margin: 0.5rem 0;
+  }
+</style>
