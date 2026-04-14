@@ -22,3 +22,27 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# === Agent Workspaces ===
+# All agent workspaces should not be tracked by the parent repo
+.clawhub/
+.openclaw/
+analyst/
+copywriter/
+docs/
+engineer/
+finance/
+guanfu/
+hr/
+main/
+operator/
+public/
+sales/
+skills/
+src/
+trader/
+guanfu-astro/
+
+# Backup files
+*.bak
+*.backup
